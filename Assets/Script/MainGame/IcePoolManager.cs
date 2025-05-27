@@ -3,78 +3,44 @@ using System.Collections.Generic;
 
 public class IcePoolManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class IcePool
-    {
-        public GameObject prefab;
-        public int initialSize = 10;
-        [HideInInspector] public Queue<GameObject> pool = new Queue<GameObject>();
-    }
+    [Header("얼음 종류별 프리팹")]
+    public List<GameObject> icePrefabs;
 
-    public List<IcePool> icePools;
+    [Header("초기 풀 크기")]
+    public int initialSize = 10;
+
+    private List<Queue<GameObject>> icePools = new List<Queue<GameObject>>();
 
     void Start()
     {
-        foreach (var ice in icePools)
+        foreach (var prefab in icePrefabs)
         {
-            for (int i = 0; i < ice.initialSize; i++)
+            Queue<GameObject> pool = new Queue<GameObject>();
+            for (int i = 0; i < initialSize; i++)
             {
-                GameObject obj = Instantiate(ice.prefab);
+                GameObject obj = Instantiate(prefab);
                 obj.SetActive(false);
-                ice.pool.Enqueue(obj);
+                pool.Enqueue(obj);
             }
+            icePools.Add(pool);
         }
     }
 
-    public GameObject GetIceFromPool(int typeIndex, Vector3 position)
+    public GameObject GetIceFromPool(int typeIndex, Vector3 position, float scale = 1f)
     {
         if (typeIndex < 0 || typeIndex >= icePools.Count) return null;
 
-        IcePool ice = icePools[typeIndex];
-        GameObject obj;
-
-        if (ice.pool.Count > 0)
-        {
-            obj = ice.pool.Dequeue();
-        }
-        else
-        {
-            obj = Instantiate(ice.prefab);
-        }
+        Queue<GameObject> pool = icePools[typeIndex];
+        GameObject obj = (pool.Count > 0) ? pool.Dequeue() : Instantiate(icePrefabs[typeIndex]);
 
         obj.transform.position = position;
-
-        // IceManager 초기화
-        IceManager iceManager = obj.GetComponent<IceManager>();
-        if (iceManager != null)
-        {
-            iceManager.Init(this, typeIndex);
-        }
-
-        return obj;
-    }
-    public GameObject GetIceFromPool(int typeIndex, Vector3 position, float scale)
-    {
-        if (typeIndex < 0 || typeIndex >= icePools.Count) return null;
-
-        IcePool ice = icePools[typeIndex];
-        GameObject obj;
-
-        if (ice.pool.Count > 0)
-        {
-            obj = ice.pool.Dequeue();
-        }
-        else
-        {
-            obj = Instantiate(ice.prefab);
-        }
-
-        obj.transform.position = position;
+        obj.SetActive(true);
 
         IceManager iceManager = obj.GetComponent<IceManager>();
         if (iceManager != null)
         {
-            iceManager.Init(this, typeIndex, scale); // 크기 전달
+            iceManager.Init(this, typeIndex, scale);
+            iceManager.inPool = false; // 🔄 풀에서 꺼냄 표시
         }
 
         return obj;
@@ -82,14 +48,25 @@ public class IcePoolManager : MonoBehaviour
 
     public void ReturnIceToPool(GameObject obj, int typeIndex)
     {
+        IceManager iceManager = obj.GetComponent<IceManager>();
+
+        if (iceManager != null && iceManager.inPool)
+        {
+            Debug.LogWarning("이미 반환된 오브젝트입니다.");
+            return;
+        }
+
         obj.SetActive(false);
+
         if (typeIndex >= 0 && typeIndex < icePools.Count)
         {
-            icePools[typeIndex].pool.Enqueue(obj);
+            icePools[typeIndex].Enqueue(obj);
+            if (iceManager != null)
+                iceManager.inPool = true; // 🔄 반환 완료 표시
         }
         else
         {
-            Destroy(obj); // 방어 로직
+            Destroy(obj);
         }
     }
 }

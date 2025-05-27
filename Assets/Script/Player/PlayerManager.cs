@@ -30,8 +30,9 @@ public class PlayerManager : MonoBehaviour
         playerATK = PlayerAttack.PlayerWeapon.ATK + playerATK_default + playerATK_increase * playerLevel;
     }
 
-    public void Die()
+    public void Die_from_Ice()//얼음에 맞아죽었을 때 호출하기
     {
-
+        print("플레이어 얼음에 맞아죽음...");
     }
+    
 }

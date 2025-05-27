@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     {
         Instance = this;//게임을 새로 시작할 때마다 초기화해주기 위함
 
-        PlayerAttack.ChangeWeapon(GameManager.Instance.GameData.StartWeapon);//시작무기로 초기화
+        //PlayerAttack.ChangeWeapon(GameManager.Instance.GameData.StartWeapon);//시작무기로 초기화
     }
 
 

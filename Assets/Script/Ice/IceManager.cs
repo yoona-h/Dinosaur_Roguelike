@@ -1,11 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class IceManager : MonoBehaviour
-{ 
-    [SerializeField]
-    private float maxHP = 100f;
-    [Space]
-    public CapsuleCollider collider_;
+{
+    [SerializeField] private float maxHP = 100f;
+    [Space] public CapsuleCollider collider_;
+    public Ice_HPbar Ice_HPbar;
 
     private float currentHP;
     public float CurrentHP
@@ -23,25 +22,66 @@ public class IceManager : MonoBehaviour
 
     [HideInInspector] public bool isDead = false;
 
+    // í´ë§ ê´€ë ¨ í•„ë“œ
+    private IcePoolManager poolManager;
+    private int typeIndex;
+
     void Start()
     {
         CurrentHP = maxHP;
     }
 
+    #region í¬ê¸°ì„¤ì •ì„ í•˜ëŠ” ê²ƒê³¼ ì•ˆí•˜ëŠ” ê²ƒ ë‘˜ì„ ì˜¤ë²„ë¼ì´ë”©í•¨.
+    public void Init(IcePoolManager pool, int index)
+    {
+        poolManager = pool;
+        typeIndex = index;
+        isDead = false;
+        collider_.enabled = true;
+        CurrentHP = maxHP;
+        Ice_HPbar.SetHealth(1f);
+        gameObject.SetActive(true);
+    }
+    public void Init(IcePoolManager pool, int index, float scale)
+    {
+        poolManager = pool;
+        typeIndex = index;
+        isDead = false;
+        collider_.enabled = true;
+        CurrentHP = maxHP;
+        Ice_HPbar.SetHealth(1f);
+
+        transform.localScale = Vector3.one * scale; // í¬ê¸° ë°˜ì˜
+        gameObject.SetActive(true);
+    }
+    #endregion
+
     public void TakeDamage(float amount)
     {
         if (isDead) return;
         CurrentHP -= amount;
-        print("¾öÀ½ Ã¼·Â : " + currentHP);
+        Ice_HPbar.SetHealth(CurrentHP / maxHP);
     }
 
     private void Die()
     {
         isDead = true;
         collider_.enabled = false;
-        // ¾Ö´Ï¸ŞÀÌ¼Ç, »ç¿îµå
-        // ¿ÀºêÁ§Æ® ÆÄ±«(¶Ç´Â Æú¸µ)Àº ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ³¡³­ ÈÄ ÀÌ·ç¾îÁ®¾ß ÇÏ¹Ç·Î µû·Î ÆÄ±« ÇÔ¼ö ¸¸µé¾î¼­ ¾Ö´Ï¸ŞÀÌ¼Ç¿¡ ÇÔ¼ö Ãß°¡ÇÏ±â
-        Destroy(gameObject);//¿ÀºêÁ§Æ® Æú¸µ ±¸ÇöÇÏ±â
+        // TODO: ì‚¬ìš´ë“œ, ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒ
+        // ì• ë‹ˆë©”ì´ì…˜ ì´ë²¤íŠ¸ë‚˜ ì¼ì • ì‹œê°„ í›„ì— ë‹¤ìŒ í•¨ìˆ˜ í˜¸ì¶œ
+        ReturnToPool(); // ì˜ˆ: 1.5ì´ˆ í›„ ë³µê·€
+    }
+
+    private void ReturnToPool()//ì• ë‹ˆë©”ì´ì…˜ì—ì„œ íƒ€ì´ë°ë§ê²Œ ë¶€ë¥´ê¸°. 
+    {
+        if (poolManager != null)
+        {
+            poolManager.ReturnIceToPool(gameObject, typeIndex);
+        }
+        else
+        {
+            Debug.LogWarning("PoolManager not assigned!");
+            Destroy(gameObject); // ì˜ˆì™¸ ìƒí™© ëŒ€ë¹„
+        }
     }
 }
-

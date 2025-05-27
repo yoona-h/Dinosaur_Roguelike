@@ -46,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
         PlayerWeapon = weapon;
         Attack_function = weapon.Attack_function;
         AttackArea_collider.size = weapon.AttackArea*weapon.AttackRange;
+        PlayerManager.Instance.apply_ATK();
     }
 
     IEnumerator AttackTimer(float time)

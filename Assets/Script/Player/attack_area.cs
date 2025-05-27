@@ -3,34 +3,38 @@ using UnityEngine;
 
 public class attack_area : MonoBehaviour
 {
-    [HideInInspector] public IceManager manager;
-
-    private int damage;
+    private HashSet<IceManager> currentTargets = new HashSet<IceManager>();
     private bool active = false;
-    private HashSet<GameObject> hitTargets = new HashSet<GameObject>();
+    private int damage;
 
+    // 공격 발동 시 호출 (외부에서)
     public void Activate(int damageAmount)
     {
-        active = true;
         damage = damageAmount;
-        hitTargets.Clear();
-    }
-
-    public void Deactivate()
-    {
-        active = false;
+        foreach (var target in currentTargets)
+        {
+            if (target != null)
+            {
+                target.TakeDamage(damage);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!active) return;
-        if (hitTargets.Contains(other.gameObject)) return;
-
         var target = other.GetComponent<IceManager>();
         if (target != null)
         {
-            target.TakeDamage(damage);
-            hitTargets.Add(other.gameObject);
+            currentTargets.Add(target);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        var target = other.GetComponent<IceManager>();
+        if (target != null)
+        {
+            currentTargets.Remove(target);
         }
     }
 }

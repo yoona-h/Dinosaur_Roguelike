@@ -21,6 +21,7 @@ public class IceGameManager : MonoBehaviour
     List<float> rand_ice_rand = new List<float>();
     private void Awake()
     {
+        System.GC.Collect();
         foreach (float num in rand_ice)
             rand_ice_rand.Add(0);
     }
@@ -58,7 +59,7 @@ public class IceGameManager : MonoBehaviour
                 break;
             }
         }
-        print(index);
+        //print(index);
 
         // 무작위 크기
         float randomScale = Random.Range(1f, 2f);

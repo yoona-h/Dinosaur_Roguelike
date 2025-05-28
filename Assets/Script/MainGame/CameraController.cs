@@ -10,7 +10,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * GameManager.Instance.GameData.mouseSensitivity * 20f * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * GameManager.Instance.GameData.mouseSensitivity * 10f * Time.deltaTime;
         currentYaw += mouseX;
     }
 

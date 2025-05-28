@@ -337,7 +337,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerAttack: {fileID: 173124612}
   PlayerMove: {fileID: 173124610}
-  playerATK: 1
+  attack_area: {fileID: 480930147}
+  playerATK: 10
   playerLevel: 0
   playerEXP: 0
   nextLevel_EXP: 0
@@ -362,6 +363,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7, y: 0.7, z: 0.7}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &278059349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278059350}
+  m_Layer: 0
+  m_Name: Ice pooling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &278059350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278059349}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &480930141
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,8 +832,8 @@ MonoBehaviour:
   MapSize: {x: 50, y: 50}
   interval: 2
   rand_ice:
-  - 30
-  - 60
+  - 40
+  - 50
   - 5
   - 5
   poolManager: {fileID: 857351786}
@@ -817,6 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e777b4d748777d4a9bb654a59738942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ice_pooling_transform: {fileID: 278059349}
   icePrefabs:
   - {fileID: 5269269672536967230, guid: 645ee1b5acb829a41a8ec808b131d98e, type: 3}
   - {fileID: 5269269672536967230, guid: ec9731ea68c98724aa905ec1ed2a22e2, type: 3}
@@ -1415,3 +1448,4 @@ SceneRoots:
   - {fileID: 857351784}
   - {fileID: 5552793131978275627}
   - {fileID: 173124609}
+  - {fileID: 278059350}

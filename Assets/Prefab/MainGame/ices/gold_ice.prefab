@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 6922030008078908801}
   - component: {fileID: 4005323867574487876}
   - component: {fileID: 7934772107864289766}
+  - component: {fileID: 3292368439894177075}
   m_Layer: 0
   m_Name: gold_ice
   m_TagString: Untagged
@@ -324,6 +325,7 @@ MonoBehaviour:
   maxHP: 50
   dropPiece_min: 8
   dropPiece_max: 20
+  IcePiece_In_IceOBJ: {fileID: 3292368439894177075}
   collider_: {fileID: 1079356366335485246}
   animator_: {fileID: 5537299990878838179}
   Ice_HPbar: {fileID: 7934772107864289766}
@@ -350,6 +352,20 @@ MonoBehaviour:
   Canvas: {fileID: 7109694555008529240}
   healthSlider: {fileID: 4694709111031662609}
   canvasGroup: {fileID: 590316808241200510}
+--- !u!114 &3292368439894177075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5269269672536967230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cf6455152bb7840bdb724d9cc44b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expShardPrefab: {fileID: 3188048338861794163, guid: e6fad85e5b695634c810c9e30f2b08c3, type: 3}
+  shardCount: 0
 --- !u!1 &5881623883744829839
 GameObject:
   m_ObjectHideFlags: 0

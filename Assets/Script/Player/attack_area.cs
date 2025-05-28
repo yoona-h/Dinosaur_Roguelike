@@ -47,6 +47,10 @@ public class attack_area : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Exit_ice(other);
+    }
+    public void Exit_ice(Collider other)
+    {
         IceManager target = other.GetComponent<IceManager>();
         if (target == null)
         {

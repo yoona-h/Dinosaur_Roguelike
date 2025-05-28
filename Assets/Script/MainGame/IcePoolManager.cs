@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class IcePoolManager : MonoBehaviour
 {
+    public GameObject ice_pooling_transform;
+
     [Header("얼음 종류별 프리팹")]
     public List<GameObject> icePrefabs;
 
@@ -19,6 +21,7 @@ public class IcePoolManager : MonoBehaviour
             for (int i = 0; i < initialSize; i++)
             {
                 GameObject obj = Instantiate(prefab);
+                obj.transform.SetParent(ice_pooling_transform.transform);
                 obj.SetActive(false);
                 pool.Enqueue(obj);
             }
@@ -31,7 +34,17 @@ public class IcePoolManager : MonoBehaviour
         if (typeIndex < 0 || typeIndex >= icePools.Count) return null;
 
         Queue<GameObject> pool = icePools[typeIndex];
-        GameObject obj = (pool.Count > 0) ? pool.Dequeue() : Instantiate(icePrefabs[typeIndex]);
+        GameObject obj;
+
+        if (pool.Count > 0)
+        {
+            obj = pool.Dequeue();
+        }
+        else
+        {
+            obj = Instantiate(icePrefabs[typeIndex]);
+            obj.transform.SetParent(ice_pooling_transform.transform);
+        }
 
         obj.transform.position = position;
         obj.SetActive(true);
@@ -40,7 +53,7 @@ public class IcePoolManager : MonoBehaviour
         if (iceManager != null)
         {
             iceManager.Init(this, typeIndex, scale);
-            iceManager.inPool = false; // 🔄 풀에서 꺼냄 표시
+            iceManager.inPool = false;
         }
 
         return obj;

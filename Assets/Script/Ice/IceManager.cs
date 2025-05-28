@@ -6,7 +6,8 @@ public class IceManager : MonoBehaviour
     [SerializeField] private int dropPiece_min = 0;
     [SerializeField] private int dropPiece_max = 0;
     [Space]
-    public CapsuleCollider collider_;
+    public IcePiece_in_IceOBJ IcePiece_In_IceOBJ;
+    public Collider collider_;
     public Animator animator_;
     public Ice_HPbar Ice_HPbar;
     public GameObject Ice_body;
@@ -42,6 +43,10 @@ public class IceManager : MonoBehaviour
     void Start()
     {
         CurrentHP = maxHP;
+        if (IcePiece_In_IceOBJ == null)
+        {
+            IcePiece_In_IceOBJ = gameObject.GetComponent<IcePiece_in_IceOBJ>();
+        }
     }
 
 
@@ -96,17 +101,19 @@ public class IceManager : MonoBehaviour
     {
         if (isDead) return;
         CurrentHP -= amount;
-        print("얼음 TakeDamage : " + CurrentHP);
+        //print("얼음 TakeDamage : " + CurrentHP);
         Ice_HPbar.SetHealth(CurrentHP / maxHP);
     }
 
     private void Die()
     {
+        PlayerManager.Instance.attack_area.Exit_ice(collider_);
         isDead = true;
         collider_.enabled = false;
         // TODO: 사운드, 애니메이션 재생
 
-        //----------------------------------------------------------------------얼음조각 랜덤 드랍 구현하기 + 경험치 획득, 레벨업, 레벨업에 따른 확률변동과 시간간격 감소까지 구현하기---------
+        int piece_num = Random.Range(dropPiece_min, dropPiece_max+1);
+        IcePiece_In_IceOBJ.BreakAndSpawn(piece_num);
 
         // 애니메이션 이벤트에서 타이밍 맞게 부르도록 로직 바꾸기
         ReturnToPool(); // 예: 1.5초 후 복귀

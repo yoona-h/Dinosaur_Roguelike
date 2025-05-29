@@ -345,10 +345,10 @@ PrefabInstance:
       addedObject: {fileID: 6310607486612380300}
     - targetCorrespondingSourceObject: {fileID: -3717566479248328372, guid: 0bf1e33e17ee98c4eb0b8b28b53beb50, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7033244941677509292}
+      addedObject: {fileID: 170103286385591841}
     - targetCorrespondingSourceObject: {fileID: -3717566479248328372, guid: 0bf1e33e17ee98c4eb0b8b28b53beb50, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 170103286385591841}
+      addedObject: {fileID: 7033244941677509292}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0bf1e33e17ee98c4eb0b8b28b53beb50, type: 3}
       insertIndex: -1

@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public bool test_Infinity = false; //테스트용, 클리어 판별용 변수로 대체
+    public GameObject InfinityButton;
     void Start()
     {
 
@@ -13,7 +14,10 @@ public class TitleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (test_Infinity == true)
+        {
+            InfinityButton.SetActive(true);
+        }
     }
 
     public void StartGame()

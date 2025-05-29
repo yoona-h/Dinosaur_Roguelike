@@ -339,9 +339,10 @@ MonoBehaviour:
   PlayerMove: {fileID: 173124610}
   attack_area: {fileID: 480930147}
   playerATK: 10
+  playerATK_increase: 2
   playerLevel: 0
   playerEXP: 0
-  nextLevel_EXP: 0
+  nextLevel_EXP: 10
 --- !u!65 &173124614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -795,6 +796,7 @@ GameObject:
   - component: {fileID: 857351784}
   - component: {fileID: 857351785}
   - component: {fileID: 857351786}
+  - component: {fileID: 857351787}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -856,6 +858,20 @@ MonoBehaviour:
   - {fileID: 5269269672536967230, guid: c22705150cf98084d9fdcfc4bd7e6313, type: 3}
   - {fileID: 5269269672536967230, guid: e66f335686aeb95459b899e76647ef33, type: 3}
   initialSize: 10
+--- !u!114 &857351787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857351783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71e49a01c4ca1e4aac4942e285bc013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IceGameManager: {fileID: 857351785}
+  LevelUp_sound: {fileID: 8300000, guid: 81d28cfdfd904ee4082754c7a1398520, type: 3}
 --- !u!1 &1190532148
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     public int playerLevel = 0;//현재 플레이어의 레벨 저장
     public int playerEXP = 0;//플레이어가 현재 획득한 경험치
-    public int nextLevel_EXP = 0;//다음 레벨이 되기 위해 필요한 경험치 량. 레벨업 할 때마다 일정한 규칙으로 증가시킨다.
+    public int nextLevel_EXP = 10;//다음 레벨이 되기 위해 필요한 경험치 량. 레벨업 할 때마다 일정한 규칙으로 증가시킨다.
 
 
     private void Awake()
@@ -34,6 +34,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Die_from_Ice()//얼음에 맞아죽었을 때 호출하기
     {
+        GameManager.Instance.GameData.MaxScore = playerEXP;
         print("플레이어 얼음에 맞아죽음...");
     }
     

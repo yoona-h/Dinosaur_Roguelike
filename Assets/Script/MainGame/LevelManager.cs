@@ -3,7 +3,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public IceGameManager IceGameManager;
-
+    public AudioClip LevelUp_sound;
     public int playerLevel
     {
         get => PlayerManager.Instance.playerLevel;
@@ -51,6 +51,8 @@ public class LevelManager : MonoBehaviour
     {
         playerLevel++;
         playerATK += playerATK_increase;
+
+        GameManager.Instance.SoundManager.PlaySFX(LevelUp_sound);
 
         //임시 수식... 밸런스르르 고려하여 증가율 수식 설정하기! ------------------------------------------------------------------------
         playerATK_increase = playerATK_increase;

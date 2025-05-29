@@ -17,7 +17,7 @@ public class LevelUpUIScript : MonoBehaviour
         lastLevel = PlayerManager.Instance.playerLevel;
         LevelText.text = lastLevel + "Lv";
         pauseLevelText.text = string.Format("공룡 : {0} Lv", lastLevel);
-        WeaponText.text = string.Format("{0} : {1} Lv", lastLevel, lastLevel); //무기로 수정
+        WeaponText.text = string.Format("{0} : {1} Lv", lastLevel, lastLevel); //무기 정보로 수정
     }
 
     void Update()
@@ -45,14 +45,14 @@ public class LevelUpUIScript : MonoBehaviour
 
     public void UpgradeButton()
     {
-        //무기 레벨업 코드 추가
+        //무기 레벨업 코드 추가, 텍스트 초기화
         WeaponText.text = "무기 : 무기렙 Lv";
         StartCoroutine(LevelUpCooldown());
     }
 
     public void ChangeButton()
     {
-        //무기 변경 코드 추가
+        //무기 변경 코드 추가, 텍스트 초기화
         WeaponText.text = "무기 : 무기렙 Lv";
         StartCoroutine(LevelUpCooldown());
     }

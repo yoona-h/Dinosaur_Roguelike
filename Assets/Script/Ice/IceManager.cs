@@ -12,6 +12,7 @@ public class IceManager : MonoBehaviour
     public Animator body_animator;
     public Ice_HPbar Ice_HPbar;
 
+    public ParticleSystem takedamage_particle;
 
     float attackRadius = 1f;
     public LayerMask playerLayer;
@@ -92,6 +93,7 @@ public class IceManager : MonoBehaviour
         //print("얼음 TakeDamage : " + CurrentHP);
         Ice_HPbar.SetHealth(CurrentHP / maxHP);
 
+        takedamage_particle.Play();
 
         if (CurrentHP <= 0)
             body_animator.SetInteger("destroy", 3);

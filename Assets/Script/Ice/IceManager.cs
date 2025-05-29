@@ -8,10 +8,9 @@ public class IceManager : MonoBehaviour
     [Space]
     public IcePiece_in_IceOBJ IcePiece_In_IceOBJ;
     public Collider collider_;
-    public Animator animator_;
+
+    public Animator body_animator;
     public Ice_HPbar Ice_HPbar;
-    public GameObject Ice_body;
-    public GameObject warning_area;
 
 
     float attackRadius = 1f;
@@ -52,14 +51,7 @@ public class IceManager : MonoBehaviour
 
     private void OnEnable()
     {
-        //처음 생성시 생성범위에 경고하기
-        warning_area.SetActive(true);
-        Ice_body.SetActive(false);
-        animator_.SetTrigger("start");
 
-        //경고가 끝나고 생성되었을 때도 
-
-        //얼음 자라나는 애니메이션 재생하기
     }
     public void Attack()
     {
@@ -74,11 +66,6 @@ public class IceManager : MonoBehaviour
             }
         }
     }
-    public void finish_warning()
-    {
-        warning_area.SetActive(false);
-        Ice_body.SetActive(true);
-    }
 
 
     public void Init(IcePoolManager pool, int index, float scale = 1f)
@@ -89,6 +76,7 @@ public class IceManager : MonoBehaviour
         typeIndex = index;
         isDead = false;
         collider_.enabled = true;
+        body_animator.Rebind();
         CurrentHP = maxHP;
         Ice_HPbar.SetHealth(1f);
         attackRadius = gameObject.transform.localScale.x * 0.8f;
@@ -103,6 +91,13 @@ public class IceManager : MonoBehaviour
         CurrentHP -= amount;
         //print("얼음 TakeDamage : " + CurrentHP);
         Ice_HPbar.SetHealth(CurrentHP / maxHP);
+
+        if (CurrentHP <= maxHP * 0.4f) 
+            body_animator.SetInteger("destroy", 1);
+        else if (CurrentHP <= maxHP * 0.7f)
+            body_animator.SetInteger("destroy", 2);
+        else if (CurrentHP <= 0)
+            body_animator.SetInteger("destroy", 3);
     }
 
     private void Die()

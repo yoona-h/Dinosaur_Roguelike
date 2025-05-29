@@ -29,7 +29,7 @@ public class PauseScript : MonoBehaviour
 
         PausePanel.SetActive(isPause); //퍼즈화면 활성화
 
-        if (LevelUpPanel.activeSelf == false) // 레벨업 즁 퍼즈시 시간흐름제어X
+        if (LevelUpPanel.activeSelf == false) // 레벨업 중 퍼즈시 시간흐름제어X
         {
             GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
 

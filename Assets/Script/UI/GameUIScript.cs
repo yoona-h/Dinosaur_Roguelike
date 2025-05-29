@@ -30,9 +30,20 @@ public class GameUIScript : MonoBehaviour
             Debug.Log("게임 클리어"); //클리어 추가
         }
         UpdatesunBar();
-        // 얼음 조각을 먹을 시 -> 해 막대 크기 업 추가 구현 필요
+        /*
+                if ()
+                {
+                    IncreaseSunBar(); // 얼음조각 습득 감지시 함수 호출
+                }
+        */
     }
+    public void IncreaseSunBar(float amount)
+    {
+        // 조각 가중치 만큼 sunBar 길이 업
+        currentsunBar += amount;
 
+        UpdatesunBar();
+    }
     void UpdatesunBar()
     {
         float fillAmount = currentsunBar / maxsunBar;

@@ -47,25 +47,28 @@ public class LevelUpUIScript : MonoBehaviour
     {
         //무기 레벨업 코드 추가, 텍스트 초기화
         WeaponText.text = "무기 : 무기렙 Lv";
-        StartCoroutine(LevelUpCooldown());
+
+        LevelUpPanel.SetActive(false);
+
+        Time.timeScale = 1f;
+        Cursor.visible = false;                   // 커서 숨기기
+        Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
+
+        GameManager.Instance.GameData.GameStop = false;
     }
 
     public void ChangeButton()
     {
         //무기 변경 코드 추가, 텍스트 초기화
         WeaponText.text = "무기 : 무기렙 Lv";
-        StartCoroutine(LevelUpCooldown());
-    }
 
-    IEnumerator LevelUpCooldown()
-    {
         LevelUpPanel.SetActive(false);
-        Time.timeScale = 1f;
 
+        Time.timeScale = 1f;
         Cursor.visible = false;                   // 커서 숨기기
         Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
 
-        yield return new WaitForSecondsRealtime(levelUpCooldown);
         GameManager.Instance.GameData.GameStop = false;
     }
+
 }

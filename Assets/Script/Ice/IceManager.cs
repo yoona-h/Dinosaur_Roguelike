@@ -92,12 +92,13 @@ public class IceManager : MonoBehaviour
         //print("얼음 TakeDamage : " + CurrentHP);
         Ice_HPbar.SetHealth(CurrentHP / maxHP);
 
-        if (CurrentHP <= maxHP * 0.4f) 
-            body_animator.SetInteger("destroy", 1);
-        else if (CurrentHP <= maxHP * 0.7f)
-            body_animator.SetInteger("destroy", 2);
-        else if (CurrentHP <= 0)
+
+        if (CurrentHP <= 0)
             body_animator.SetInteger("destroy", 3);
+        else if(CurrentHP <= maxHP * 0.4f) 
+            body_animator.SetInteger("destroy", 2);
+        else if (CurrentHP <= maxHP * 0.7f)
+            body_animator.SetInteger("destroy", 1);
     }
 
     private void Die()
@@ -109,12 +110,9 @@ public class IceManager : MonoBehaviour
 
         int piece_num = Random.Range(dropPiece_min, dropPiece_max+1);
         IcePiece_In_IceOBJ.BreakAndSpawn(piece_num);
-
-        // 애니메이션 이벤트에서 타이밍 맞게 부르도록 로직 바꾸기
-        ReturnToPool(); // 예: 1.5초 후 복귀
     }
 
-    private void ReturnToPool()//애니메이션에서 타이밍맞게 부르기. 오브젝트를 아예 없애버리는거임
+    public void ReturnToPool()//애니메이션에서 타이밍맞게 부르기. 오브젝트를 아예 없애버리는거임
     {
         if (poolManager != null)
         {

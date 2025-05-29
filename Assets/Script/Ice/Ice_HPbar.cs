@@ -9,8 +9,8 @@ public class Ice_HPbar : MonoBehaviour
     public CanvasGroup canvasGroup;      // 투명도 조절을 위한 컴포넌트
 
     
-    float maxVisibleDistance = 90f;   // 이 거리 이상이면 안 보이게
-    float fadeStartDistance = 30f;    // 이 거리부터 서서히 투명해짐
+    float maxVisibleDistance = 50f;   // 이 거리 이상이면 안 보이게
+    float fadeStartDistance = 20f;    // 이 거리부터 서서히 투명해짐
 
     void Start()
     {

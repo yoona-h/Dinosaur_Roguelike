@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 2584075441515297910}
   - component: {fileID: 888092382462247387}
   - component: {fileID: 5201535668365812638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 2735617939786409206}
   - component: {fileID: 5610957180573908081}
   - component: {fileID: 5592651892117604882}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 6994223654305654334}
   - component: {fileID: 7669112844253483716}
   - component: {fileID: 3072915362781890369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 3062197299318645242}
   - component: {fileID: 6368412529029876205}
   - component: {fileID: 9058233046895420171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Crash Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5136,7 +5136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4143435520284913146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: nomal_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5170,7 +5170,7 @@ GameObject:
   - component: {fileID: 4390464941532389475}
   - component: {fileID: 8767686540699515312}
   - component: {fileID: 7816146555536439605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5257,7 +5257,7 @@ GameObject:
   - component: {fileID: 4005323867574487876}
   - component: {fileID: 7934772107864289766}
   - component: {fileID: 2918427755929922699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: blue_ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5379,7 +5379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8486025278347392113}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: nomal_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5679,7 +5679,8 @@ GameObject:
   - component: {fileID: 8706176049224341187}
   - component: {fileID: 6166566998153706031}
   - component: {fileID: 5122618630635321767}
-  m_Layer: 0
+  - component: {fileID: 3798215317802124887}
+  m_Layer: 6
   m_Name: Blue Ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5767,6 +5768,33 @@ MonoBehaviour:
       - m_Target: {fileID: 4005323867574487876}
         m_TargetAssemblyTypeName: IceManager, Assembly-CSharp
         m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3798215317802124887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8117980970630981266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09022f6fd49df9c46870e8f46e54c84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4005323867574487876}
+        m_TargetAssemblyTypeName: IceManager, Assembly-CSharp
+        m_MethodName: ReturnToPool
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5950,7 +5978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5186759065485432212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: nomal_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5982,7 +6010,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5564423877101388575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: warning
   m_TagString: Untagged
   m_Icon: {fileID: 0}

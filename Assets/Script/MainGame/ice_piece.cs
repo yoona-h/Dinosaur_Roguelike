@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ice_piece : MonoBehaviour
 {
-    float delay = 0.25f;                 // 이동 시작 전 딜레이
+    float delay = 0.4f;                 // 이동 시작 전 딜레이
     float baseSpeed = 7f;               // 시작 속도
     float currentSpeed;
     float speedMultiplier = 1.008f;      // 매 프레임 속도 증가 비율

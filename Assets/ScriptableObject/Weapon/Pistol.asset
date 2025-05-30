@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f699c960e5704097c8e47e4ddf919, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  Weapon_prefab: {fileID: 0}
+  Weapon_prefab: {fileID: 3998822677710655898, guid: 2b978c512a46b5647917ea8e5f157711, type: 3}
   Bullet: {fileID: 0}
   ATK: 0
   AttackSpeed: 0
@@ -21,5 +21,6 @@ MonoBehaviour:
   AttackSpeed_increase: 0
   AttackRange_increase: 0
   AttackArea: {x: 0, y: 0, z: 0}
+  weaponID: 4
   Weapon_name: 
   Weapon_description: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f699c960e5704097c8e47e4ddf919, type: 3}
   m_Name: pickaxe
   m_EditorClassIdentifier: 
-  Weapon_prefab: {fileID: 0}
+  Weapon_prefab: {fileID: 3209055476184249869, guid: 3ce3f3bea075e2d428a075eeb6719172, type: 3}
   Bullet: {fileID: 0}
   ATK: 0
   AttackSpeed: 0
@@ -21,5 +21,6 @@ MonoBehaviour:
   AttackSpeed_increase: 0
   AttackRange_increase: 0
   AttackArea: {x: 0, y: 0, z: 0}
+  weaponID: 1
   Weapon_name: 
   Weapon_description: 

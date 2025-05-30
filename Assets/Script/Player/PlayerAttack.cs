@@ -46,7 +46,6 @@ public class PlayerAttack : MonoBehaviour
 
         // 추가
         PlayerAnimator.SetTrigger("Attack");
-        print("Attack");
 
         Damage();//나중에 애니메이션에서 호출하도록 바꾸기 (일단 그냥 둠)
         StartCoroutine(AttackTimer(PlayerWeapon.AttackSpeed));
@@ -74,7 +73,7 @@ public class PlayerAttack : MonoBehaviour
         {
             CurrentWeapon = Instantiate(weapon.Weapon_prefab, weaponHolder, false);
             PlayerAnimator.SetInteger("WeaponID", PlayerWeapon.weaponID);
-            print("무기변경");
+            print("무기 변경");
         }
     }
 

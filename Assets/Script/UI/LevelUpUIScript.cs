@@ -7,6 +7,7 @@ public class LevelUpUIScript : MonoBehaviour
     public Text LevelText; //게임화면 좌상단 텍스트
     public Text pauseLevelText; //퍼즈화면 텍스트
     public Text WeaponText; //퍼즈화면 텍스트
+    public Image levelUi; // 레벨 ui 배경색 이미지
     public GameObject LevelUpPanel; //레벨업화면
     private int lastLevel = 0; //레벨카운팅
     public float levelUpCooldown = 0.3f; // 레벨업 패널이 사라진 후 다음 레벨업까지의 쿨다운 시간
@@ -17,7 +18,7 @@ public class LevelUpUIScript : MonoBehaviour
         lastLevel = PlayerManager.Instance.playerLevel;
         LevelText.text = lastLevel + "Lv";
         pauseLevelText.text = string.Format("공룡 : {0} Lv", lastLevel);
-        WeaponText.text = string.Format("{0} : {1} Lv", lastLevel, lastLevel); //무기 정보로 수정
+        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, lastLevel); //무기 정보로 수정
     }
 
     void Update()
@@ -46,7 +47,9 @@ public class LevelUpUIScript : MonoBehaviour
     public void UpgradeButton()
     {
         //무기 레벨업 코드 추가, 텍스트 초기화
-        WeaponText.text = "무기 : 무기렙 Lv";
+
+        // 무기 텍스트 업데이트
+        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, lastLevel);
 
         LevelUpPanel.SetActive(false);
 
@@ -60,7 +63,9 @@ public class LevelUpUIScript : MonoBehaviour
     public void ChangeButton()
     {
         //무기 변경 코드 추가, 텍스트 초기화
-        WeaponText.text = "무기 : 무기렙 Lv";
+
+        // 무기 텍스트 업데이트
+        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, lastLevel);
 
         LevelUpPanel.SetActive(false);
 

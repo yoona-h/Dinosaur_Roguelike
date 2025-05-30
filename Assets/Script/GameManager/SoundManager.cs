@@ -17,7 +17,9 @@ public class SoundManager : MonoBehaviour
         {
             sfxPlayers[i] = sfxPlayer_obj.AddComponent<AudioSource>();
         }
-
+    }
+    private void Start()
+    {
         Init();
     }
 
@@ -64,7 +66,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    private void Init()//오디오 소스 설정 초기화
+    public void Init()//오디오 소스 설정 초기화
     {
         bgmPlayer.playOnAwake = true;
         bgmPlayer.loop = true;
@@ -80,10 +82,11 @@ public class SoundManager : MonoBehaviour
     }
     public void apply_volume()
     {
-        bgmPlayer.volume = GameManager.Instance.GameData.BackGroundMusic_Volume;
+        print(gameObject.GetComponent<GameData>().BackGroundMusic_Volume);
+        bgmPlayer.volume = gameObject.GetComponent<GameData>().BackGroundMusic_Volume;
         for (int i = 0; i < sfxPlayers.Length; i++)
         {
-            sfxPlayers[i].volume = GameManager.Instance.GameData.EffectSound_Volume;
+            sfxPlayers[i].volume = gameObject.GetComponent<GameData>().EffectSound_Volume;
         }
     }
 }

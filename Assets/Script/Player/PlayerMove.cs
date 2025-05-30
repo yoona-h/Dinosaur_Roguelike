@@ -5,6 +5,7 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed = 5f;
     public float rotationSpeed = 20f;
     public ThirdPersonCamera cameraController;
+    public Animator animator; // 추가
 
     private Rigidbody rb;
     private Vector3 movementInput;
@@ -34,6 +35,11 @@ public class PlayerMove : MonoBehaviour
         if (inputDir.magnitude > 0.1f)
         {
             lastMoveDir = movementInput;
+            animator.SetBool("Walk", true); // 추가, 걷기 애니메이션 ON
+        }
+        else
+        {
+            animator.SetBool("Walk", false); // 추가, 걷기 애니메이션 OFF
         }
     }
 

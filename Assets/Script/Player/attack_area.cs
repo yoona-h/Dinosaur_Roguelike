@@ -10,9 +10,11 @@ public class attack_area : MonoBehaviour
     // 공격 발동 시 호출 (외부에서)
     public void Activate(int damageAmount)
     {
+        print(currentTargets.Count);
         damage = damageAmount;
-        foreach (var target in currentTargets)
+        foreach (IceManager target in currentTargets)
         {
+            print(target.name);
             if (target != null)
             {
                 target.TakeDamage(damage);
@@ -22,19 +24,50 @@ public class attack_area : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var target = other.GetComponent<IceManager>();
+        IceManager target = other.GetComponent<IceManager>();
+        if (target == null)
+        {
+            target = other.GetComponentInParent<IceManager>();
+        }
+        if (target == null)
+        {
+            target = other.GetComponentInChildren<IceManager>();
+        }
+
         if (target != null)
         {
             currentTargets.Add(target);
         }
+        else
+        {
+            Debug.LogWarning($"[Enter] IceManager 못 찾음 → 충돌한 오브젝트: {other.name}, 부모: {other.transform.parent?.name}");
+        }
     }
+
 
     private void OnTriggerExit(Collider other)
     {
-        var target = other.GetComponent<IceManager>();
+        Exit_ice(other);
+    }
+    public void Exit_ice(Collider other)
+    {
+        IceManager target = other.GetComponent<IceManager>();
+        if (target == null)
+        {
+            target = other.GetComponentInParent<IceManager>();
+        }
+        if (target == null)
+        {
+            target = other.GetComponentInChildren<IceManager>();
+        }
+
         if (target != null)
         {
             currentTargets.Remove(target);
+        }
+        else
+        {
+            Debug.LogWarning($"[Enter] IceManager 못 찾음 → 충돌한 오브젝트: {other.name}, 부모: {other.transform.parent?.name}");
         }
     }
 }

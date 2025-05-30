@@ -15,9 +15,16 @@ public class GameData : MonoBehaviour
     [HideInInspector] public float mouseSensitivity = 5f;
 
 
+    private void Awake()
+    {
+        LoadData();
+    }
+
     public void LoadData()
     {
-
+        //임시
+        BackGroundMusic_Volume = 0.5f;
+        EffectSound_Volume = 0.5f;
     }
 
     public void SaveData()

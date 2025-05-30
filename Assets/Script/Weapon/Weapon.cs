@@ -38,6 +38,10 @@ public class Weapon : ScriptableObject
     [Header("���� ���� �ݶ��̴� ����")]
     public Vector3 AttackArea;
 
+    // 추가
+    [Header("무기 고유 ID")]
+    public int weaponID;
+
     [Header("���� �̸�")]
     public string Weapon_name;
     [Header("���� ����")]

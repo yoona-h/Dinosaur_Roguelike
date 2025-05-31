@@ -20,6 +20,7 @@ public class TitleScript : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("MainGame");
+        GameManager.Instance.SoundManager.PlayBGM();
     }
 
     public void OpenAndClose_SettingScreen()

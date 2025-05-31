@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem.Interactions;
 
@@ -15,19 +17,23 @@ public class Weapon : ScriptableObject
 {
     public void Attack_function()
     {
+        GameObject currentWeapon = PlayerManager.Instance.PlayerAttack.currentWeapon;
+
         if (Bullet != null)//원거리 공격일 때
         {
-            //총알발사???
+            Vector3 shootDirection = PlayerManager.Instance.transform.forward;
+            
+            Instantiate(Bullet, currentWeapon.transform.position, Quaternion.LookRotation(shootDirection));
         }
 
         if (weaponID == 3)
         {
-            PlayerManager.Instance.PlayerAttack.currentWeapon.GetComponentInChildren<ParticleSystem>().Play();
+            currentWeapon.GetComponentInChildren<ParticleSystem>().Play();
         }
 
         if (weaponID == 4)
         {
-            PlayerManager.Instance.PlayerAttack.currentWeapon.GetComponent<Animator>().SetTrigger("Rotation");
+            currentWeapon.GetComponent<Animator>().SetTrigger("Rotation");
         }
     }
 

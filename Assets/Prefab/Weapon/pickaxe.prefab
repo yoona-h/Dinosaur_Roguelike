@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2865145163440434359}
   m_Layer: 0
-  m_Name: pickaxe
+  m_Name: Pickaxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

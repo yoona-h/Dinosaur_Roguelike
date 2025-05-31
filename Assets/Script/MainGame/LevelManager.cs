@@ -81,7 +81,7 @@ public class LevelManager : MonoBehaviour
             case 4:
                 break;
         }
-        *?
+        */
 
         LevelUpUIScript.LevelUp();
 

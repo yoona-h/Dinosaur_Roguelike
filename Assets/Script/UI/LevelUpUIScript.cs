@@ -30,6 +30,9 @@ public class LevelUpUIScript : MonoBehaviour
     public GameObject pickaxe_Image;
     public GameObject Pistol_Image;
 
+    [Space]
+    public LevelManager LevelManager;
+
     private List<Weapon> weaponList = new List<Weapon>();
     private List<GameObject> weaponImageList = new List<GameObject>();
     void Start()
@@ -89,6 +92,7 @@ public class LevelUpUIScript : MonoBehaviour
     public void UpgradeButton()
     {
         //무기 레벨업 신호 보내는 코드 필요?할?듯?
+        LevelManager.WeaponLevelUp();//무기 레벨업
 
         // 무기 텍스트 업데이트
         WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);

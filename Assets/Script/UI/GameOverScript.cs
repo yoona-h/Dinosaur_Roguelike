@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameOverScript : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameOverScript : MonoBehaviour
     public ThirdPersonCamera ThirdPersonCameraScript;
     public GameObject GameClearPanel;
     public GameObject GameOverPanel;
+
+    public Animator PlayerAnimator;
 
     void Start()
     {
@@ -34,7 +37,13 @@ public class GameOverScript : MonoBehaviour
         PlayerMoveScript.enabled = false;
         PlayerAttackScript.enabled = false;
         ThirdPersonCameraScript.enabled = false;
+        PlayerAnimator.SetTrigger("Die");
+        StartCoroutine(ShowGameOverPanelDelayed());
+    }
 
+    private IEnumerator ShowGameOverPanelDelayed()
+    {
+        yield return new WaitForSeconds(0.5f);
         GameOverPanel.SetActive(true);
     }
 

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class GameOverScript : MonoBehaviour
 {
     public Image sunBar;
+    public PlayerMove PlayerMoveScript;
+    public PlayerAttack PlayerAttackScript;
 
     void Start()
     {
@@ -26,7 +28,7 @@ public class GameOverScript : MonoBehaviour
 
     public void gameover()
     {
-
+        playerMoveScript.enabled = false;
     }
 
     public void gameclear()

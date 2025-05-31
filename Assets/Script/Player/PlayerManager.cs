@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -9,15 +9,15 @@ public class PlayerManager : MonoBehaviour
     public attack_area attack_area;
 
 
-    public int playerATK;//ÇöÀç ÇÃ·¹ÀÌ¾îÀÇ °ø°İ·Â ÀúÀå
+    public int playerATK;//í˜„ì¬ í”Œë ˆì´ì–´ì˜ ê³µê²©ë ¥ ì €ì¥
     private int playerATK_default = 2;
     public int playerATK_increase;
 
-    public int playerLevel = 0;//ÇöÀç ÇÃ·¹ÀÌ¾îÀÇ ·¹º§ ÀúÀå
-    public int playerEXP = 0;//ÇÃ·¹ÀÌ¾î°¡ ÇöÀç È¹µæÇÑ °æÇèÄ¡
-    public int nextLevel_EXP = 10;//´ÙÀ½ ·¹º§ÀÌ µÇ±â À§ÇØ ÇÊ¿äÇÑ °æÇèÄ¡ ·®. ·¹º§¾÷ ÇÒ ¶§¸¶´Ù ÀÏÁ¤ÇÑ ±ÔÄ¢À¸·Î Áõ°¡½ÃÅ²´Ù.
+    public int playerLevel = 0;//í˜„ì¬ í”Œë ˆì´ì–´ì˜ ë ˆë²¨ ì €ì¥
+    public int playerEXP = 0;//í”Œë ˆì´ì–´ê°€ í˜„ì¬ íšë“í•œ ê²½í—˜ì¹˜
+    public int nextLevel_EXP = 10;//ë‹¤ìŒ ë ˆë²¨ì´ ë˜ê¸° ìœ„í•´ í•„ìš”í•œ ê²½í—˜ì¹˜ ëŸ‰. ë ˆë²¨ì—… í•  ë•Œë§ˆë‹¤ ì¼ì •í•œ ê·œì¹™ìœ¼ë¡œ ì¦ê°€ì‹œí‚¨ë‹¤.
 
-    //ÇöÀç ÇÃ·¹ÀÌ¾îÀÇ ¹«±â º¯¼ö
+    //í˜„ì¬ í”Œë ˆì´ì–´ì˜ ë¬´ê¸° ë³€ìˆ˜
     public Weapon PlayerWeapon
     {
         get => PlayerAttack.PlayerWeapon;
@@ -27,10 +27,10 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;//°ÔÀÓÀ» »õ·Î ½ÃÀÛÇÒ ¶§¸¶´Ù ÃÊ±âÈ­ÇØÁÖ±â À§ÇÔ
+        Instance = this;//ê²Œì„ì„ ìƒˆë¡œ ì‹œì‘í•  ë•Œë§ˆë‹¤ ì´ˆê¸°í™”í•´ì£¼ê¸° ìœ„í•¨
         playerATK = playerATK_default;
 
-        //PlayerAttack.ChangeWeapon(GameManager.Instance.GameData.StartWeapon);//½ÃÀÛ¹«±â·Î ÃÊ±âÈ­
+        //PlayerAttack.ChangeWeapon(GameManager.Instance.GameData.StartWeapon);//ì‹œì‘ë¬´ê¸°ë¡œ ì´ˆê¸°í™”
     }
 
 
@@ -39,10 +39,10 @@ public class PlayerManager : MonoBehaviour
         playerATK = PlayerAttack.PlayerWeapon.ATK + playerATK_default + playerATK_increase * playerLevel;
     }
 
-    public void Die_from_Ice()//¾óÀ½¿¡ ¸Â¾ÆÁ×¾úÀ» ¶§ È£ÃâÇÏ±â
+    public void Die_from_Ice()//ì–¼ìŒì— ë§ì•„ì£½ì—ˆì„ ë•Œ í˜¸ì¶œí•˜ê¸°
     {
         GameManager.Instance.GameData.MaxScore = playerEXP;
-        print("ÇÃ·¹ÀÌ¾î ¾óÀ½¿¡ ¸Â¾ÆÁ×À½...");
+        print("í”Œë ˆì´ì–´ ì–¼ìŒì— ë§ì•„ì£½ìŒ...");
     }
     
 }

@@ -126,7 +126,7 @@ public class IcePoolManager : MonoBehaviour
             iceManager.inPool = false;
         }
 
-        PlayerManager.Instance.attack_area.Exit_ice(obj.GetComponentInChildren<Collider>());
+        //PlayerManager.Instance.attack_area.Exit_ice(obj.GetComponentInChildren<Collider>());
 
         return obj;
     }

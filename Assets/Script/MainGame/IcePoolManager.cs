@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿/*
+ * using UnityEngine;
 using System.Collections.Generic;
 
 public class IcePoolManager : MonoBehaviour
@@ -83,5 +84,68 @@ public class IcePoolManager : MonoBehaviour
         {
             Destroy(obj);
         }
+    }
+}
+*/
+using UnityEngine;
+using System.Collections.Generic;
+
+public class IcePoolManager : MonoBehaviour
+{
+    [Header("얼음 종류별 프리팹")]
+    public List<GameObject> icePrefabs;
+
+    // 풀링용 부모 오브젝트는 더 이상 사용하지 않지만 다른 코드가 참조할 수도 있어 남겨둡니다
+    public GameObject ice_pooling_transform;
+
+    void Start()
+    {
+        // 풀 초기화 제거 – 아무것도 하지 않음
+    }
+
+    public GameObject GetIceFromPool(int typeIndex, Vector3 position, float scale = 1f)
+    {
+        if (typeIndex < 0 || typeIndex >= icePrefabs.Count)
+        {
+            Debug.LogWarning("잘못된 얼음 타입 인덱스입니다.");
+            return null;
+        }
+
+        GameObject obj = Instantiate(icePrefabs[typeIndex], position, Quaternion.identity);
+        obj.transform.localScale = Vector3.one * scale;
+
+        if (ice_pooling_transform != null)
+        {
+            obj.transform.SetParent(ice_pooling_transform.transform);
+        }
+
+        IceManager iceManager = obj.GetComponent<IceManager>();
+        if (iceManager != null)
+        {
+            iceManager.Init(this, typeIndex, scale);
+            iceManager.inPool = false;
+        }
+
+        PlayerManager.Instance.attack_area.Exit_ice(obj.GetComponentInChildren<Collider>());
+
+        return obj;
+    }
+
+    public void ReturnIceToPool(GameObject obj, int typeIndex)
+    {
+        IceManager iceManager = obj.GetComponent<IceManager>();
+
+        if (iceManager != null && iceManager.inPool)
+        {
+            Debug.LogWarning("이미 반환된 오브젝트입니다.");
+            return;
+        }
+
+        if (iceManager != null)
+        {
+            iceManager.inPool = true;
+        }
+
+        Destroy(obj); // 풀에 넣는 대신 바로 삭제
     }
 }

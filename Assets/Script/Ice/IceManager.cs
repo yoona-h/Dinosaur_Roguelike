@@ -54,6 +54,7 @@ public class IceManager : MonoBehaviour
         if (currentHP <= 0f && !isDead)
         {
             Die();
+            ReturnToPool();
         }
     }
     public void Attack()

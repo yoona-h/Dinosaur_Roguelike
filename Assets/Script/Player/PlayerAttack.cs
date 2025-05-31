@@ -61,6 +61,10 @@ public class PlayerAttack : MonoBehaviour
         PlayerWeapon = weapon;
         Attack_function = weapon.Attack_function;
         AttackArea_collider.size = weapon.AttackArea*weapon.AttackRange;
+        if (weapon.weaponID == 5)
+            AttackArea_collider.center = new Vector3(0, 0, 25);
+        else
+            AttackArea_collider.center = Vector3.zero;
         PlayerManager.Instance.apply_ATK();
 
         // 추가, 무기 프리팹 교체 처리
@@ -77,8 +81,12 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    IEnumerator AttackTimer(float time)
+    IEnumerator AttackTimer(float time = 0.01f)
     {
+        if (time <= 0)
+        {
+            yield break;
+        }
         Attackable = false;
         yield return new WaitForSeconds(time);
         Attackable = true;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameOverScript : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameOverScript : MonoBehaviour
     public ThirdPersonCamera ThirdPersonCameraScript;
     public GameObject GameClearPanel;
     public GameObject GameOverPanel;
+
+    public Animator PlayerAnimator;
 
     void Start()
     {
@@ -34,6 +37,16 @@ public class GameOverScript : MonoBehaviour
         PlayerMoveScript.enabled = false;
         PlayerAttackScript.enabled = false;
         ThirdPersonCameraScript.enabled = false;
+        PlayerAnimator.SetTrigger("Die");
+        StartCoroutine(ShowGameOverPanelDelayed());
+    }
+
+    private IEnumerator ShowGameOverPanelDelayed()
+    {
+        yield return new WaitForSeconds(2f);
+
+        Cursor.visible = true;                    // 커서 보이기
+        Cursor.lockState = CursorLockMode.None;   // 커서 자유롭게 이동
 
         GameOverPanel.SetActive(true);
     }
@@ -41,5 +54,10 @@ public class GameOverScript : MonoBehaviour
     public void gameclear()
     {
         GameClearPanel.SetActive(true);
+
+        Cursor.visible = true;                    // 커서 보이기
+        Cursor.lockState = CursorLockMode.None;   // 커서 자유롭게 이동
+
+        Time.timeScale = 0f;
     }
 }

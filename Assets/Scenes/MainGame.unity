@@ -668,9 +668,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f139a3f6fad5d4b97281446f9356f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testWeapon: {fileID: 11400000, guid: 82030b93c85759c4eb8c93fc955a3b40, type: 2}
+  testWeapon: {fileID: 11400000, guid: ce87023acf862c5479193d4225287a0a, type: 2}
   PlayerWeapon: {fileID: 11400000, guid: 890056def97b0744ca71b2a8cb9ec7e3, type: 2}
   weaponHolder: {fileID: 342074391}
+  currentWeapon: {fileID: 0}
   PlayerAnimator: {fileID: 1527611480}
   AttackArea_collider: {fileID: 480930146}
   attack_area: {fileID: 480930147}
@@ -3906,6 +3907,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 173124609}
     m_Modifications:
+    - target: {fileID: 1440188181802687685, guid: 1e62e440902c3934d8a8aff3a48175c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1856099294296492696, guid: 1e62e440902c3934d8a8aff3a48175c6, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
 /*
  *  장착된 무기마다 다른 공격방식 → 무기 데이터에 공격방식관련 함수 넣어놓고 공격이벤트에 연결하기 (그냥 휘두르기, 총 쏘기, 등등… → 애니메이션 만들어두고 어떤 애니메이션에 연결할지 무기에 변수로 저장하기(string))
@@ -17,6 +18,11 @@ public class Weapon : ScriptableObject
         if (Bullet != null)//원거리 공격일 때
         {
             //총알발사???
+        }
+
+        if (weaponID == 4)
+        {
+            PlayerManager.Instance.PlayerAttack.currentWeapon.GetComponent<Animator>().SetTrigger("Rotation");
         }
     }
 

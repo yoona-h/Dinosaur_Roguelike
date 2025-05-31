@@ -22,7 +22,7 @@ public class Weapon : ScriptableObject
 
         if (weaponID == 3)
         {
-            PlayerManager.Instance.PlayerAttack.currentWeapon.transform.GetComponent<ParticleSystem>().Play();
+            PlayerManager.Instance.PlayerAttack.currentWeapon.GetComponentInChildren<ParticleSystem>().Play();
         }
 
         if (weaponID == 4)

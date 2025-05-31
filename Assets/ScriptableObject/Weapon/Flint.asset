@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f699c960e5704097c8e47e4ddf919, type: 3}
   m_Name: Flint
   m_EditorClassIdentifier: 
-  Weapon_prefab: {fileID: 3256929037490871185, guid: 3677af98a56317d4a980dcc5a5615e1c, type: 3}
+  Weapon_prefab: {fileID: 5900764541848551777, guid: 3677af98a56317d4a980dcc5a5615e1c, type: 3}
   Bullet: {fileID: 0}
   weaponLevel: 0
   ATK: 0

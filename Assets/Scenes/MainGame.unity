@@ -2398,13 +2398,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e777b4d748777d4a9bb654a59738942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ice_pooling_transform: {fileID: 278059349}
   icePrefabs:
   - {fileID: 5269269672536967230, guid: 645ee1b5acb829a41a8ec808b131d98e, type: 3}
   - {fileID: 5269269672536967230, guid: ec9731ea68c98724aa905ec1ed2a22e2, type: 3}
   - {fileID: 5269269672536967230, guid: c22705150cf98084d9fdcfc4bd7e6313, type: 3}
   - {fileID: 5269269672536967230, guid: e66f335686aeb95459b899e76647ef33, type: 3}
-  initialSize: 10
+  ice_pooling_transform: {fileID: 278059349}
 --- !u!114 &857351787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4089,7 +4088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1478352573
 RectTransform:
   m_ObjectHideFlags: 0

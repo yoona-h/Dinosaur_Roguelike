@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    public LevelUpUIScript LevelUpUIScript;
     public IceGameManager IceGameManager;
     public WeaponSelect_manager WeaponSelect_manager;
     public AudioClip LevelUp_sound;
@@ -63,7 +64,7 @@ public class LevelManager : MonoBehaviour
         else
             interval = 0.8f;
 
-        WeaponSelect_manager.Show_WeaponSelect();
+        LevelUpUIScript.LevelUp();
 
         PlayerManager.Instance.apply_ATK();
     }

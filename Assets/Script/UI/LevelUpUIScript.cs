@@ -60,14 +60,16 @@ public class LevelUpUIScript : MonoBehaviour
         float fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
         levelUi.fillAmount = fillAmount;
 
+        /*
         // 레벨업 판별
         if (PlayerManager.Instance.playerLevel != playerlastLevel && !GameManager.Instance.GameData.GameStop)
         {
             LevelUp();
         }
+        */
     }
 
-    void LevelUp()
+    public void LevelUp()
     {
         Cursor.visible = true;                    // 커서 보이기
         Cursor.lockState = CursorLockMode.None;   // 커서 자유롭게 이동
@@ -101,6 +103,8 @@ public class LevelUpUIScript : MonoBehaviour
         Cursor.visible = false;                   // 커서 숨기기
         Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
 
+        PlayerManager.Instance.apply_ATK();
+
         GameManager.Instance.GameData.GameStop = false;
     }
 
@@ -119,6 +123,8 @@ public class LevelUpUIScript : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.visible = false;                   // 커서 숨기기
         Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
+
+        PlayerManager.Instance.apply_ATK();
 
         GameManager.Instance.GameData.GameStop = false;
     }

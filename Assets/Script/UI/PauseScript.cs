@@ -3,10 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
-
     public GameObject PausePanel; //퍼즈화면
-    private bool isPause = false; //퍼즈여부
     public GameObject LevelUpPanel; //레벨업화면
+    public GameObject GameOverPanel;
+    public GameObject GameClearPanel;
+
+    private bool isPause = false; //퍼즈여부
+
+
 
     void Start()
     {
@@ -15,9 +19,12 @@ public class PauseScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (GameOverPanel.activeSelf == false && GameClearPanel.activeSelf == false)
         {
-            pauseButton();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pauseButton();
+            }
         }
     }
 
@@ -52,6 +59,12 @@ public class PauseScript : MonoBehaviour
     {
         GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
         SceneManager.LoadScene("TitleScene");
+    }
+
+    public void RestartButton()
+    {
+        GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
+        SceneManager.LoadScene("MainGameScene");
     }
 
 }

@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("Weapon")]
     public Weapon PlayerWeapon;
     public Transform weaponHolder; // 추가, 손 위치
+    public GameObject currentWeapon; // 추가, 현재 장착된 무기 오브젝트
 
     [Header("Animator")]
     public Animator PlayerAnimator;
@@ -22,8 +23,7 @@ public class PlayerAttack : MonoBehaviour
     Action Attack_function;
 
     bool Attackable = true;
-
-    GameObject CurrentWeapon; // 추가, 현재 장착된 무기 오브젝트
+    
 
     private void Update()
     {
@@ -64,14 +64,14 @@ public class PlayerAttack : MonoBehaviour
         PlayerManager.Instance.apply_ATK();
 
         // 추가, 무기 프리팹 교체 처리
-        if (CurrentWeapon != null)
+        if (currentWeapon != null)
         {
-            Destroy(CurrentWeapon);
+            Destroy(currentWeapon);
         }
 
         if (weapon.Weapon_prefab != null && weaponHolder != null)
         {
-            CurrentWeapon = Instantiate(weapon.Weapon_prefab, weaponHolder, false);
+            currentWeapon = Instantiate(weapon.Weapon_prefab, weaponHolder, false);
             PlayerAnimator.SetInteger("WeaponID", PlayerWeapon.weaponID);
             print("무기 변경");
         }

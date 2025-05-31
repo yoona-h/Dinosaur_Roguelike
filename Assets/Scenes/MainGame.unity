@@ -16946,6 +16946,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3495338654742368014, guid: 84f2d7ca09c7ed540a841ac56f482415, type: 3}
+      propertyPath: bgmSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c05f699decf892540ae38251420acf80, type: 3}
+    - target: {fileID: 3495338654742368014, guid: 84f2d7ca09c7ed540a841ac56f482415, type: 3}
       propertyPath: sfxSounds.Array.size
       value: 5
       objectReference: {fileID: 0}

@@ -47,7 +47,7 @@ public class PlayerAttack : MonoBehaviour
         // 추가
         PlayerAnimator.SetTrigger("Attack");
 
-        Damage();//나중에 애니메이션에서 호출하도록 바꾸기 (일단 그냥 둠)
+        //Damage();//나중에 애니메이션에서 호출하도록 바꾸기 - 완료
         StartCoroutine(AttackTimer(PlayerWeapon.AttackSpeed));
     }
 

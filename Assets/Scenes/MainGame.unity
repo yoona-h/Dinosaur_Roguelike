@@ -4612,6 +4612,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617064937}
   m_CullTransparentMesh: 1
+--- !u!1 &1771472202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3573022723531801771, guid: 1e62e440902c3934d8a8aff3a48175c6, type: 3}
+  m_PrefabInstance: {fileID: 1957889544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1771472204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771472202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6228509f92648e4da76da4c35ffea6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 173124612}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1785832011
 GameObject:
   m_ObjectHideFlags: 0
@@ -5149,7 +5181,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3573022723531801771, guid: 1e62e440902c3934d8a8aff3a48175c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1771472204}
   m_SourcePrefab: {fileID: 100100000, guid: 1e62e440902c3934d8a8aff3a48175c6, type: 3}
 --- !u!1 &1972351898
 GameObject:

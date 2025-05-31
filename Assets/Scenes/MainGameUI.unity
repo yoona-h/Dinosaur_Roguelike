@@ -1290,11 +1290,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sunBar: {fileID: 1563841591}
-  PlayerMoveScript: {fileID: 0}
-  PlayerAttackScript: {fileID: 0}
-  ThirdPersonCameraScript: {fileID: 0}
-  GameClearPanel: {fileID: 0}
-  GameOverPanel: {fileID: 0}
+  PlayerMoveScript: {fileID: 173124610}
+  PlayerAttackScript: {fileID: 173124612}
+  ThirdPersonCameraScript: {fileID: 1802466806}
+  GameClearPanel: {fileID: 1718808435}
+  GameOverPanel: {fileID: 1038182697}
 --- !u!1 &455512642
 GameObject:
   m_ObjectHideFlags: 0

@@ -3223,6 +3223,7 @@ MonoBehaviour:
   pickaxe_Image: {fileID: 1789901228}
   Pistol_Image: {fileID: 951906736}
   LevelManager: {fileID: 857351787}
+  PlayerManager: {fileID: 173124613}
 --- !u!114 &439045377
 MonoBehaviour:
   m_ObjectHideFlags: 0

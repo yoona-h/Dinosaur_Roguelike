@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class TitleScript : MonoBehaviour
 {
-    public bool test_Infinity = false; //테스트용, 클리어 판별용 변수로 대체
-    public GameObject InfinityButton;
+    public GameObject Setting_screen;
+
     void Start()
     {
 
@@ -14,10 +14,7 @@ public class TitleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (test_Infinity == true)
-        {
-            InfinityButton.SetActive(true);
-        }
+
     }
 
     public void StartGame()
@@ -25,11 +22,11 @@ public class TitleScript : MonoBehaviour
         SceneManager.LoadScene("MainGame");
     }
 
-    public void StartInfinityGame()
+    public void OpenAndClose_SettingScreen()
     {
-        //비활성화, 게임 클리어시 활성화 구현 필요
+        //화면이 꺼져있으면 키고, 켜져있으면 끄기
+        Setting_screen.SetActive(!Setting_screen.activeSelf);
     }
-
     public void ExitGame()
     {
         Application.Quit();

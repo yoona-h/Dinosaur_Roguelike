@@ -15,13 +15,13 @@ MonoBehaviour:
   Weapon_prefab: {fileID: 3209055476184249869, guid: 3ce3f3bea075e2d428a075eeb6719172, type: 3}
   Bullet: {fileID: 0}
   weaponLevel: 0
-  ATK: 0
-  AttackSpeed: 0.5
-  AttackRange: 0
-  ATK_increase: 0
-  AttackSpeed_increase: 0
+  ATK: 1
+  AttackSpeed: 0.8
+  AttackRange: 1
+  ATK_increase: 1
+  AttackSpeed_increase: 0.01
   AttackRange_increase: 0
-  AttackArea: {x: 0, y: 0, z: 0}
+  AttackArea: {x: 1.3, y: 1, z: 1.3}
   weaponID: 1
   Weapon_name: Pickaxe
   Weapon_description: 

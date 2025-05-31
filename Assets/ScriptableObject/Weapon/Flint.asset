@@ -15,13 +15,13 @@ MonoBehaviour:
   Weapon_prefab: {fileID: 5900764541848551777, guid: 3677af98a56317d4a980dcc5a5615e1c, type: 3}
   Bullet: {fileID: 0}
   weaponLevel: 0
-  ATK: 0
-  AttackSpeed: 0.5
-  AttackRange: 0
-  ATK_increase: 0
+  ATK: 3
+  AttackSpeed: 1
+  AttackRange: 1
+  ATK_increase: 2
   AttackSpeed_increase: 0
   AttackRange_increase: 0
-  AttackArea: {x: 0, y: 0, z: 0}
+  AttackArea: {x: 1.2, y: 1, z: 1.2}
   weaponID: 3
   Weapon_name: Flint
   Weapon_description: 

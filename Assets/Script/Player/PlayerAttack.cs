@@ -42,6 +42,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()//마우스 클릭시 실행되는 함수. 애니메이션 시작, 공격 사운드 재생 등 시작할 때 필요한 동작을 실행한다.
     {
+        PlayerManager.Instance.apply_ATK();
         Attack_function?.Invoke();
 
         // 추가

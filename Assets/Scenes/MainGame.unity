@@ -976,6 +976,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 91616045}
   LevelUpPanel: {fileID: 204795229}
+  GameOverPanel: {fileID: 0}
+  GameClearPanel: {fileID: 0}
 --- !u!114 &439045376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,6 +1024,7 @@ MonoBehaviour:
   BarIcon: {fileID: 878765539}
   maxsunBar: 1210
   currentsunBar: 0
+  sunBarspeed: 1
   sunBarRect: {fileID: 1563841590}
   barIconRect: {fileID: 878765538}
 --- !u!4 &439045378
@@ -1945,6 +1948,7 @@ MonoBehaviour:
   LevelUpUIScript: {fileID: 439045376}
   IceGameManager: {fileID: 857351785}
   WeaponSelect_manager: {fileID: 857351788}
+  GameUIScript: {fileID: 0}
   PlayerAttack: {fileID: 0}
   LevelUp_sound: {fileID: 8300000, guid: 81d28cfdfd904ee4082754c7a1398520, type: 3}
 --- !u!114 &857351788

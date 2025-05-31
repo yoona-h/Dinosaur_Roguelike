@@ -9,33 +9,6 @@ public class LevelManager : MonoBehaviour
     public PlayerAttack PlayerAttack;
     [Space]
     public AudioClip LevelUp_sound;
-    public int playerLevel
-    {
-        get => PlayerManager.Instance.playerLevel;
-        set => PlayerManager.Instance.playerLevel = value;
-    }
-    public int playerEXP
-    {
-        get => PlayerManager.Instance.playerEXP;
-        set => PlayerManager.Instance.playerEXP = value;
-    }
-    public int nextLevel_EXP
-    {
-        get => PlayerManager.Instance.nextLevel_EXP;
-        set => PlayerManager.Instance.nextLevel_EXP = value;
-    }
-
-    public int playerATK
-    {
-        get => PlayerManager.Instance.playerATK;
-        set => PlayerManager.Instance.playerATK = value;
-    }
-    public int playerATK_increase
-    {
-        get => PlayerManager.Instance.playerATK_increase;
-        set => PlayerManager.Instance.playerATK_increase = value;
-    }
-
     public float interval
     {
         get => IceGameManager.interval;
@@ -52,7 +25,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
-        if (playerEXP >= nextLevel_EXP)
+        if (PlayerManager.Instance.playerEXP >= PlayerManager.Instance.nextLevel_EXP)
         {
             LevelUp();
         }
@@ -61,21 +34,21 @@ public class LevelManager : MonoBehaviour
 
     void LevelUp()
     {
-        playerLevel++;
-        playerATK += playerATK_increase;
+        PlayerManager.Instance.playerLevel++;
+        PlayerManager.Instance.playerATK += PlayerManager.Instance.playerATK_increase;
 
         GameManager.Instance.SoundManager.PlaySFX(LevelUp_sound);
 
         //임시 수식... 밸런스르르 고려하여 증가율 수식 설정하기! ------------------------------------------------------------------------
-        playerATK_increase = playerATK_increase;
-        nextLevel_EXP = (int)(nextLevel_EXP * 1.5f);
+        //PlayerManager.Instance.playerATK_increase = PlayerManager.Instance.playerATK_increase;
+        PlayerManager.Instance.nextLevel_EXP = (int)(PlayerManager.Instance.nextLevel_EXP * 2f);
 
         if (interval > 1)
             interval -= 0.2f;
         else
             interval = 0.8f;
         
-        switch(playerLevel)
+        switch(PlayerManager.Instance.playerLevel)
         {
             case 0:
                 GameUIScript.sunBarspeed += 0.05f;

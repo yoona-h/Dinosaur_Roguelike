@@ -4983,7 +4983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 30
-  dropPiece_min: 3
+  dropPiece_min: 2
   dropPiece_max: 5
   IcePiece_In_IceOBJ: {fileID: 6015816281886121292}
   collider_: {fileID: 2300685171614762732}

@@ -78,11 +78,6 @@ public class LevelUpUIScript : MonoBehaviour
         GameManager.Instance.GameData.GameStop = true; // 게임화면 퍼즈
         Time.timeScale = 0f;
 
-        // playerlastLevel++;
-        //레벨 텍스트 재표기
-        LevelText.text = GameManager.Instance.PlayerManager.playerLevel + "Lv";
-        pauseLevelText.text = string.Format("공룡 : {0} Lv", GameManager.Instance.PlayerManager.playerLevel);
-
         LevelUpPanel.SetActive(true); //레벨업화면 활성화
 
         randomIndex = Random.Range(0, weaponList.Count);
@@ -95,6 +90,11 @@ public class LevelUpUIScript : MonoBehaviour
         while (randomWeapon == PlayerManager.Instance.PlayerAttack.PlayerWeapon);
 
         weaponImageList[randomIndex].SetActive(true); // 선별 무기 이미지 활성화
+
+        // playerlastLevel++;
+        //레벨 텍스트 재표기
+        LevelText.text = GameManager.Instance.PlayerManager.playerLevel + "Lv";
+        pauseLevelText.text = string.Format("공룡 : {0} Lv", GameManager.Instance.PlayerManager.playerLevel);
     }
 
     public void UpgradeButton()

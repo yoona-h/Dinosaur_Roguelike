@@ -747,7 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f139a3f6fad5d4b97281446f9356f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testWeapon: {fileID: 11400000, guid: a02078e5568cedd439d041c50c62458c, type: 2}
+  testWeapon: {fileID: 11400000, guid: 0060ff6e35ea1d1438022c3285dbbf60, type: 2}
   PlayerWeapon: {fileID: 11400000, guid: 890056def97b0744ca71b2a8cb9ec7e3, type: 2}
   weaponHolder: {fileID: 342074391}
   currentWeapon: {fileID: 0}
@@ -2418,8 +2418,8 @@ MonoBehaviour:
   LevelUpUIScript: {fileID: 439045376}
   IceGameManager: {fileID: 857351785}
   WeaponSelect_manager: {fileID: 857351788}
-  GameUIScript: {fileID: 0}
-  PlayerAttack: {fileID: 0}
+  GameUIScript: {fileID: 439045377}
+  PlayerAttack: {fileID: 173124612}
   LevelUp_sound: {fileID: 8300000, guid: 81d28cfdfd904ee4082754c7a1398520, type: 3}
 --- !u!114 &857351788
 MonoBehaviour:

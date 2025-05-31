@@ -7,6 +7,8 @@ public class GameUIScript : MonoBehaviour
     public Image BarIcon;
     public float maxsunBar;
     public float currentsunBar;
+    private float sunBarspeed = 0f;
+    private int getice = 0;
     public RectTransform sunBarRect;
     public RectTransform barIconRect;
 
@@ -18,7 +20,10 @@ public class GameUIScript : MonoBehaviour
 
     void Update()
     {
-        currentsunBar -= Time.deltaTime * 100f; // 시간당 5씩 해 게이지 감소, 테스트용으로 100으로 올려둠
+        sunBarspeed += 1f + Time.deltaTime;
+
+        currentsunBar -= Time.deltaTime * sunBarspeed * 0.8f;
+
         if (currentsunBar <= 0f)
         {
             currentsunBar = 0f;
@@ -29,20 +34,21 @@ public class GameUIScript : MonoBehaviour
             currentsunBar = maxsunBar;
             Debug.Log("게임 클리어"); //클리어 추가
         }
-        UpdatesunBar();
-        /*
-                if ()
-                {
-                    IncreaseSunBar(); // 얼음조각 습득 감지시 함수 호출
-                }
-        */
-    }
-    public void IncreaseSunBar(float amount)
-    {
-        // 조각 가중치 만큼 sunBar 길이 업
-        currentsunBar += amount;
 
         UpdatesunBar();
+        IncreaseSunBar(); // 얼음조각 습득 감지시 함수 호출
+
+    }
+    public void IncreaseSunBar()
+    {
+        // 조각 얻을 시 게이지 업
+        if (getice != GameManager.Instance.PlayerManager.playerEXP)
+        {
+            currentsunBar += 0.05f;
+
+            UpdatesunBar();
+        }
+
     }
     void UpdatesunBar()
     {

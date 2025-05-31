@@ -35,6 +35,9 @@ public class Weapon : ScriptableObject
         {
             currentWeapon.GetComponent<Animator>().SetTrigger("Rotation");
         }
+
+        GameManager.Instance.SoundManager.apply_volume();
+        GameManager.Instance.SoundManager.PlaySFX(weaponID - 1);
     }
 
     [Header("무기 오브젝트 프리팹")]

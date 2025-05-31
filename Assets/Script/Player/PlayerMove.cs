@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
     public float rotationSpeed = 20f;
     public ThirdPersonCamera cameraController;
     public Animator animator; // 추가
+    public AudioSource audioSource;
 
     private Rigidbody rb;
     private Vector3 movementInput;
@@ -36,10 +37,16 @@ public class PlayerMove : MonoBehaviour
         {
             lastMoveDir = movementInput;
             animator.SetBool("Walk", true); // 추가, 걷기 애니메이션 ON
+            if (!audioSource.isPlaying)
+            {
+                audioSource.volume = GameManager.Instance.GameData.EffectSound_Volume;
+                audioSource.Play();
+            }
         }
         else
         {
             animator.SetBool("Walk", false); // 추가, 걷기 애니메이션 OFF
+            audioSource.Stop();
         }
     }
 

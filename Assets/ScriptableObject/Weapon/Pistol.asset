@@ -15,13 +15,13 @@ MonoBehaviour:
   Weapon_prefab: {fileID: 3998822677710655898, guid: 2b978c512a46b5647917ea8e5f157711, type: 3}
   Bullet: {fileID: 0}
   weaponLevel: 0
-  ATK: 0
-  AttackSpeed: 0.5
-  AttackRange: 0
-  ATK_increase: 0
-  AttackSpeed_increase: 0
+  ATK: 3
+  AttackSpeed: 0.7
+  AttackRange: 1
+  ATK_increase: 1
+  AttackSpeed_increase: 0.01
   AttackRange_increase: 0
-  AttackArea: {x: 0, y: 0, z: 0}
+  AttackArea: {x: 0.7, y: 2, z: 50}
   weaponID: 5
   Weapon_name: Pistol
   Weapon_description: 

@@ -17,11 +17,11 @@ MonoBehaviour:
   weaponLevel: 0
   ATK: 0
   AttackSpeed: 0.5
-  AttackRange: 0
+  AttackRange: 1
   ATK_increase: 0
-  AttackSpeed_increase: 0
+  AttackSpeed_increase: 0.1
   AttackRange_increase: 0
-  AttackArea: {x: 0, y: 0, z: 0}
+  AttackArea: {x: 1.3, y: 1, z: 1.3}
   weaponID: 2
   Weapon_name: Fish
   Weapon_description: 

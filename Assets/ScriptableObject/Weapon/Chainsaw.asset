@@ -15,13 +15,13 @@ MonoBehaviour:
   Weapon_prefab: {fileID: 1724271536711560623, guid: a90baa4747ae6e74699073cf7df7c1a3, type: 3}
   Bullet: {fileID: 0}
   weaponLevel: 0
-  ATK: 0
+  ATK: 5
   AttackSpeed: 1
-  AttackRange: 0
+  AttackRange: 1
   ATK_increase: 0
-  AttackSpeed_increase: 0
+  AttackSpeed_increase: 0.05
   AttackRange_increase: 0
-  AttackArea: {x: 0, y: 0, z: 0}
+  AttackArea: {x: 1.5, y: 1, z: 3}
   weaponID: 4
   Weapon_name: Chainsaw
   Weapon_description: 

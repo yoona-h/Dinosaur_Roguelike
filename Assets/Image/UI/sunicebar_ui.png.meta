@@ -151,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c81c43ede99a4e21948d886b0515759
-      internalID: -59539633
+      spriteID: b1aea01e003ce4dafbbc52d83673e47f
+      internalID: 593255967
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7597765f9a9ca41068c4fdbcf7dcc4e7
-      internalID: 760798291
+      spriteID: 379b060b871c44755be63cb7021685e1
+      internalID: 604621950
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 613a4bf30727b4198b4d6d1f2e625eb9
-      internalID: -1846532428
+      spriteID: fc36ed221347b404180808b173ca1785
+      internalID: 1900395064
       vertices: []
       indices: 
       edges: []
@@ -205,7 +205,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a7a5bb7f7a2014e838e1bc72443a9b06
+    spriteID: 35b170e0238e94365a7ec01cdbe381e6
     internalID: 0
     vertices: []
     indices: 
@@ -215,9 +215,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sunicebar_ui_0: -59539633
-      sunicebar_ui_1: 760798291
-      sunicebar_ui_2: -1846532428
+      sunicebar_ui_0: 593255967
+      sunicebar_ui_1: 604621950
+      sunicebar_ui_2: 1900395064
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

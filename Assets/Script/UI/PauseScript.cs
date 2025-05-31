@@ -14,7 +14,7 @@ public class PauseScript : MonoBehaviour
 
     void Start()
     {
-
+        isPause = false;
     }
 
     void Update()
@@ -25,6 +25,10 @@ public class PauseScript : MonoBehaviour
             {
                 pauseButton();
             }
+        }
+        else
+        {
+            isPause = true;
         }
     }
 

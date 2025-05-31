@@ -49,10 +49,12 @@ public class IceManager : MonoBehaviour
         }
     }
 
-
-    private void OnEnable()
+    private void Update()
     {
-
+        if (currentHP <= 0f && !isDead)
+        {
+            Die();
+        }
     }
     public void Attack()
     {
@@ -105,6 +107,7 @@ public class IceManager : MonoBehaviour
 
     private void Die()
     {
+        print("얼음파괴");
         PlayerManager.Instance.attack_area.Exit_ice(collider_);
         isDead = true;
         collider_.enabled = false;

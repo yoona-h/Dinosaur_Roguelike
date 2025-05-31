@@ -1005,7 +1005,7 @@ MonoBehaviour:
   Flint_Image: {fileID: 178793563}
   pickaxe_Image: {fileID: 1789901228}
   Pistol_Image: {fileID: 951906736}
-  LevelManager: {fileID: 0}
+  LevelManager: {fileID: 857351787}
 --- !u!114 &439045377
 MonoBehaviour:
   m_ObjectHideFlags: 0

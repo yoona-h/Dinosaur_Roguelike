@@ -6,6 +6,12 @@ public class TitleScript : MonoBehaviour
 {
     public GameObject Setting_screen;
     public Option_Screen Option_Screen;
+    public Text maxScore;
+
+    void OnEnable() {
+        maxScore.text = "최고점수: " + GameManager.Instance.GameData.MaxScore;
+    }
+
     void Start()
     {
 

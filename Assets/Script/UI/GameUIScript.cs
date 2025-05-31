@@ -18,7 +18,7 @@ public class GameUIScript : MonoBehaviour
 
     void Update()
     {
-        currentsunBar -= Time.deltaTime * 100f; // 시간당 5씩 해 게이지 감소, 테스트용으로 100으로 올려둠
+        currentsunBar -= Time.deltaTime * 5f;
         if (currentsunBar <= 0f)
         {
             currentsunBar = 0f;

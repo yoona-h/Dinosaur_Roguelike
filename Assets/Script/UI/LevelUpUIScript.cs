@@ -15,6 +15,7 @@ public class LevelUpUIScript : MonoBehaviour
     public GameObject LevelUpPanel; //레벨업화면
     // private int playerlastLevel = 0; //플레이어레벨카운팅 
     int randomIndex; // 랜덤으로 뽑은 무기 인덱스
+    float fillAmount = 0f;
     Weapon randomWeapon; // 랜덤으로 뽑은 무기
 
     [Header("무기")]
@@ -49,17 +50,28 @@ public class LevelUpUIScript : MonoBehaviour
         weaponImageList.Add(pickaxe_Image);
         weaponImageList.Add(Pistol_Image);
 
+        StartCoroutine(DelayedInit());
+    }
+
+    private IEnumerator DelayedInit()
+    {
+        yield return null; // 한 프레임 대기
+        // LV EXP UI 초기화
+        fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
+        levelUi.fillAmount = fillAmount;
         // 텍스트 초기화
         // playerlastLevel = PlayerManager.Instance.playerLevel;
+        Debug.Log(GameManager.Instance.PlayerManager.playerLevel);
         LevelText.text = GameManager.Instance.PlayerManager.playerLevel + "Lv";
         pauseLevelText.text = string.Format("공룡 : {0} Lv", GameManager.Instance.PlayerManager.playerLevel);
         WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
+
     }
 
     void Update()
     {
         // LV EXP UI 업데이트
-        float fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
+        fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
         levelUi.fillAmount = fillAmount;
 
         /*

@@ -6,6 +6,8 @@ public class GameOverScript : MonoBehaviour
 {
     public Image sunBar;
     public Text Score;
+    public bool isgameover;
+    public bool isgameclear;
     public PlayerMove PlayerMoveScript;
     public PlayerAttack PlayerAttackScript;
     public ThirdPersonCamera ThirdPersonCameraScript;
@@ -16,19 +18,22 @@ public class GameOverScript : MonoBehaviour
 
     void Start()
     {
-
+        isgameover = false;
+        isgameclear = false;
     }
 
     void Update()
     {
-        if (sunBar.fillAmount <= 0f)
+        if (sunBar.fillAmount <= 0f && isgameover == false)
         {
             sunBar.fillAmount = 0f;
+            isgameover = true;
             gameover();
         }
-        else if (sunBar.fillAmount >= 1f)
+        else if (sunBar.fillAmount >= 1f && isgameclear == false)
         {
             sunBar.fillAmount = 1f;
+            isgameclear = true;
             gameclear();
         }
     }

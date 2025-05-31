@@ -15,24 +15,25 @@ public class GameUIScript : MonoBehaviour
     void Start()
     {
         currentsunBar = maxsunBar / 2;
+        sunBarspeed = 1f;
     }
 
 
     void Update()
     {
         currentsunBar -= Time.deltaTime * sunBarspeed * 10f;
-
-        if (currentsunBar <= 0f)
-        {
-            currentsunBar = 0f;
-            Debug.Log("게임 오버"); //게임오버 추가
-        }
-        else if (currentsunBar >= maxsunBar)
-        {
-            currentsunBar = maxsunBar;
-            Debug.Log("게임 클리어"); //클리어 추가
-        }
-
+        /*
+                if (currentsunBar <= 0f)
+                {
+                    currentsunBar = 0f;
+                    Debug.Log("게임 오버"); //게임오버 추가
+                }
+                else if (currentsunBar >= maxsunBar)
+                {
+                    currentsunBar = maxsunBar;
+                    Debug.Log("게임 클리어"); //클리어 추가
+                }
+        */
         UpdatesunBar();
         IncreaseSunBar(); // 얼음조각 습득 감지시 함수 호출
 
@@ -42,7 +43,7 @@ public class GameUIScript : MonoBehaviour
         // 조각 얻을 시 게이지 업
         if (getice != GameManager.Instance.PlayerManager.playerEXP)
         {
-            currentsunBar += (GameManager.Instance.PlayerManager.playerEXP - getice) * 10;
+            currentsunBar += (GameManager.Instance.PlayerManager.playerEXP - getice) * 20;
             getice = GameManager.Instance.PlayerManager.playerEXP;
             //print("게이지 up : " + currentsunBar);
             UpdatesunBar();

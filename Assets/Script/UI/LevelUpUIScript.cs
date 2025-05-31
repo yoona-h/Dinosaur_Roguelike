@@ -56,6 +56,11 @@ public class LevelUpUIScript : MonoBehaviour
 
     void Update()
     {
+        // LV EXP UI 업데이트
+        float fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
+        levelUi.fillAmount = fillAmount;
+
+        // 레벨업 판별
         if (PlayerManager.Instance.playerLevel != playerlastLevel && !GameManager.Instance.GameData.GameStop)
         {
             LevelUp();

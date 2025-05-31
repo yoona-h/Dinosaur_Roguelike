@@ -5,6 +5,7 @@ using System.Collections;
 public class GameOverScript : MonoBehaviour
 {
     public Image sunBar;
+    public Text Score;
     public PlayerMove PlayerMoveScript;
     public PlayerAttack PlayerAttackScript;
     public ThirdPersonCamera ThirdPersonCameraScript;
@@ -49,6 +50,9 @@ public class GameOverScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;   // 커서 자유롭게 이동
 
         GameOverPanel.SetActive(true);
+        Score.text = string.Format("점수 : {0}", GameManager.Instance.PlayerManager.playerEXP * 10);
+
+        Time.timeScale = 0f;
     }
 
     public void gameclear()

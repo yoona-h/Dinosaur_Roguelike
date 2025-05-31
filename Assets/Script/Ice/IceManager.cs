@@ -51,9 +51,9 @@ public class IceManager : MonoBehaviour
 
     private void Update()
     {
-        if (currentHP <= 0f && !isDead)
+        if (currentHP <= 0f && !isDead && !inPool)
         {
-            Die();
+            print("버그 발생. 파괴");
             ReturnToPool();
         }
     }
@@ -113,6 +113,7 @@ public class IceManager : MonoBehaviour
         isDead = true;
         collider_.enabled = false;
         // TODO: 사운드, 애니메이션 재생
+        body_animator.SetTrigger("die");
 
         int piece_num = Random.Range(dropPiece_min, dropPiece_max+1);
         IcePiece_In_IceOBJ.BreakAndSpawn(piece_num);

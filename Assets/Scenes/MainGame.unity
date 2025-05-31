@@ -6463,7 +6463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf603cebd272d449a1821f034a63f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapSize: {x: 50, y: 50}
+  MapSize: {x: 100, y: 100}
   interval: 2
   rand_ice:
   - 40

@@ -16,7 +16,7 @@ MonoBehaviour:
   Bullet: {fileID: 2572512744182042433, guid: fb71004907c505e4c88aa6ef04cacbdc, type: 3}
   weaponLevel: 6
   ATK: 9
-  AttackSpeed: 1.56
+  AttackSpeed: 1.2
   AttackRange: 1
   ATK_increase: 1
   AttackSpeed_increase: 0.01

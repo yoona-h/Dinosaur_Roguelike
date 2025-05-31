@@ -68,7 +68,7 @@ public class PauseScript : MonoBehaviour
     public void RestartButton()
     {
         GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
-        SceneManager.LoadScene("MainGameScene");
+        SceneManager.LoadScene("MainGame");
     }
 
 }

@@ -23,7 +23,13 @@ public class PlayerAttack : MonoBehaviour
     Action Attack_function;
 
     bool Attackable = true;
-    
+
+
+
+    private void Start()
+    {
+        ChangeWeapon(testWeapon);
+    }
 
     private void Update()
     {
@@ -33,11 +39,13 @@ public class PlayerAttack : MonoBehaviour
             print("공격!");
         }
 
+        /*
         // 무기 변경 테스트용 코드, 나중에 삭제
         if (Input.GetKeyDown(KeyCode.Tab)) 
         {
             ChangeWeapon(testWeapon);
         }
+        */
     }
 
     public void Attack()//마우스 클릭시 실행되는 함수. 애니메이션 시작, 공격 사운드 재생 등 시작할 때 필요한 동작을 실행한다.
@@ -59,6 +67,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void ChangeWeapon(Weapon weapon = null)
     {
+        int level = PlayerWeapon.weaponLevel;
+
         PlayerWeapon = weapon;
         Attack_function = weapon.Attack_function;
         AttackArea_collider.size = weapon.AttackArea*weapon.AttackRange;
@@ -66,7 +76,6 @@ public class PlayerAttack : MonoBehaviour
             AttackArea_collider.center = new Vector3(0, 0, 40);
         else
             AttackArea_collider.center = Vector3.zero;
-        PlayerManager.Instance.apply_ATK();
 
         // 추가, 무기 프리팹 교체 처리
         if (currentWeapon != null)
@@ -78,8 +87,11 @@ public class PlayerAttack : MonoBehaviour
         {
             currentWeapon = Instantiate(weapon.Weapon_prefab, weaponHolder, false);
             PlayerAnimator.SetInteger("WeaponID", PlayerWeapon.weaponID);
+            PlayerWeapon.weaponLevel = level;
             print("무기 변경");
         }
+
+        PlayerManager.Instance.apply_ATK();
     }
 
     IEnumerator AttackTimer(float time = 0.01f)

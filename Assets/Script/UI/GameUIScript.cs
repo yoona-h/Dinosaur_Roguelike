@@ -43,7 +43,7 @@ public class GameUIScript : MonoBehaviour
         // 조각 얻을 시 게이지 업
         if (getice != GameManager.Instance.PlayerManager.playerEXP)
         {
-            currentsunBar += (GameManager.Instance.PlayerManager.playerEXP - getice) * 10;
+            currentsunBar += (GameManager.Instance.PlayerManager.playerEXP - getice) * 20;
             getice = GameManager.Instance.PlayerManager.playerEXP;
             //print("게이지 up : " + currentsunBar);
             UpdatesunBar();

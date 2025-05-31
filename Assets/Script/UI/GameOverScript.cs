@@ -51,6 +51,8 @@ public class GameOverScript : MonoBehaviour
 
         GameOverPanel.SetActive(true);
         Score.text = string.Format("점수 : {0}", GameManager.Instance.PlayerManager.playerEXP * 10);
+
+        Time.timeScale = 0f;
     }
 
     public void gameclear()

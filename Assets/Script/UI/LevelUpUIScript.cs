@@ -85,7 +85,6 @@ public class LevelUpUIScript : MonoBehaviour
 
         LevelUpPanel.SetActive(true); //레벨업화면 활성화
 
-
         randomIndex = Random.Range(0, weaponList.Count);
         randomWeapon = weaponList[randomIndex];
         do

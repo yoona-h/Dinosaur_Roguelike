@@ -63,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
         Attack_function = weapon.Attack_function;
         AttackArea_collider.size = weapon.AttackArea*weapon.AttackRange;
         if (weapon.weaponID == 5)
-            AttackArea_collider.center = new Vector3(0, 0, 25);
+            AttackArea_collider.center = new Vector3(0, 0, 40);
         else
             AttackArea_collider.center = Vector3.zero;
         PlayerManager.Instance.apply_ATK();

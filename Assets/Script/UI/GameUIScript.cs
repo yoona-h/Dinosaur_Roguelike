@@ -15,6 +15,7 @@ public class GameUIScript : MonoBehaviour
     void Start()
     {
         currentsunBar = maxsunBar / 2;
+        sunBarspeed = 1f;
     }
 
 

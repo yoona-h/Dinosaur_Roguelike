@@ -56,7 +56,6 @@ public class LevelUpUIScript : MonoBehaviour
     private IEnumerator DelayedInit()
     {
         yield return null; // 한 프레임 대기
-
         // LV EXP UI 초기화
         fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
         levelUi.fillAmount = fillAmount;

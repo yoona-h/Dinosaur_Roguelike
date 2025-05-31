@@ -119,7 +119,7 @@ public class IceManager : MonoBehaviour
     private void Die()
     {
         print("얼음파괴");
-        PlayerManager.Instance.attack_area.Exit_ice(collider_);
+        //PlayerManager.Instance.attack_area.Exit_ice(collider_);
         isDead = true;
         collider_.enabled = false;
         // TODO: 사운드, 애니메이션 재생

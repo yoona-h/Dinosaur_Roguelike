@@ -49,7 +49,7 @@ public class IceManager : MonoBehaviour
     void Start()
     {
         CurrentHP = maxHP;
-        AudioSource_.volume = GameManager.Instance.GameData.EffectSound_Volume/10f;
+        AudioSource_.volume = GameManager.Instance.GameData.EffectSound_Volume;
         AudioSource_.clip = start_audio;
         AudioSource_.Play();
         if (IcePiece_In_IceOBJ == null)

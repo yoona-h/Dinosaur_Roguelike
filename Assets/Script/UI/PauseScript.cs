@@ -74,8 +74,8 @@ public class PauseScript : MonoBehaviour
     {
         GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
         Time.timeScale = 1f;
-        GameManager.Instance.SoundManager.StopBGM();
         SceneManager.LoadScene("TitleScene");
+        GameManager.Instance.SoundManager.PlayBGM(GameManager.Instance.SoundManager.TitleBgmSound);
     }
 
     public void RestartButton()
@@ -85,6 +85,7 @@ public class PauseScript : MonoBehaviour
         Cursor.visible = false;                   // 커서 숨기기
         Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
         SceneManager.LoadScene("MainGame");
+        GameManager.Instance.SoundManager.PlayBGM(GameManager.Instance.SoundManager.bgmSound);
     }
 
 }

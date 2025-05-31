@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
 
     [Header("Audio Clips")]
     public AudioClip bgmSound;//재생할 BGM 저장소
+    public AudioClip TitleBgmSound;//재생할 BGM 저장소
     public AudioClip[] sfxSounds;//재생할 SFX 저장소
 
     private void Awake()
@@ -21,6 +22,7 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         Init();
+        PlayBGM(TitleBgmSound);
     }
 
     public void PlayBGM(AudioClip bgmSound = null)//BGM 바꾸고싶을 때만 매개변수 전달하기. 그냥 재생은 매개변수 없어도 됨

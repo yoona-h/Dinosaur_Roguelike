@@ -96,7 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmPlayer: {fileID: 1862520888269066806}
   sfxPlayer_obj: {fileID: 733409056469704146}
-  bgmSound: {fileID: 8300000, guid: c05f699decf892540ae38251420acf80, type: 3}
+  bgmSound: {fileID: 8300000, guid: 88cd85090c16e8243b9244839b580e3f, type: 3}
+  TitleBgmSound: {fileID: 8300000, guid: c05f699decf892540ae38251420acf80, type: 3}
   sfxSounds:
   - {fileID: 8300000, guid: 0bf3912f0d6088f4a8249fa4db6d7fa0, type: 3}
   - {fileID: 8300000, guid: 50edfc95bebae8c459b12e6e6b526122, type: 3}
@@ -168,7 +169,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

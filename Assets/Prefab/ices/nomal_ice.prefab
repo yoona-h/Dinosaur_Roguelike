@@ -4995,7 +4995,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  start_audio: {fileID: 8300000, guid: 7d538204760c5614d974ae02450ec8aa, type: 3}
+  start_audio: {fileID: 8300000, guid: ac35c0a25b58e8f4c82c884317194d6f, type: 3}
   hitted_audio: {fileID: 8300000, guid: b904de61066c1124090757776126b0d0, type: 3}
   destroied_audio: {fileID: 8300000, guid: a1e309eb61a5eaa42aae520f9f4153c4, type: 3}
   isDead: 0

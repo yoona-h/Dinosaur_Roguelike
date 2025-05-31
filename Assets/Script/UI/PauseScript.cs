@@ -62,13 +62,17 @@ public class PauseScript : MonoBehaviour
     public void TitleButton()
     {
         GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("TitleScene");
     }
 
     public void RestartButton()
     {
         GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
-        SceneManager.LoadScene("MainGameScene");
+        Time.timeScale = 1f;
+        Cursor.visible = false;                   // 커서 숨기기
+        Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
+        SceneManager.LoadScene("MainGame");
     }
 
 }

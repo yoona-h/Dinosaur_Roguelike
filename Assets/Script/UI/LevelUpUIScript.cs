@@ -79,8 +79,16 @@ public class LevelUpUIScript : MonoBehaviour
         Time.timeScale = 0f;
 
         LevelUpPanel.SetActive(true); //레벨업화면 활성화
-        randomIndex = Random.Range(0, weaponList.Count); // 무작위 무기 선별
+
+        randomIndex = Random.Range(0, weaponList.Count);
         randomWeapon = weaponList[randomIndex];
+        do
+        {
+            randomIndex = Random.Range(0, weaponList.Count);
+            randomWeapon = weaponList[randomIndex];
+        }
+        while (randomWeapon == PlayerManager.Instance.PlayerAttack.PlayerWeapon);
+
         weaponImageList[randomIndex].SetActive(true); // 선별 무기 이미지 활성화
 
         // playerlastLevel++;

@@ -43,12 +43,21 @@ public class GameOverScript : MonoBehaviour
 
     private IEnumerator ShowGameOverPanelDelayed()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
+
+        Cursor.visible = true;                    // 커서 보이기
+        Cursor.lockState = CursorLockMode.None;   // 커서 자유롭게 이동
+
         GameOverPanel.SetActive(true);
     }
 
     public void gameclear()
     {
         GameClearPanel.SetActive(true);
+
+        Cursor.visible = true;                    // 커서 보이기
+        Cursor.lockState = CursorLockMode.None;   // 커서 자유롭게 이동
+
+        Time.timeScale = 0f;
     }
 }

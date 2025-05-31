@@ -1140,6 +1140,7 @@ MonoBehaviour:
   ThirdPersonCameraScript: {fileID: 1802466806}
   GameClearPanel: {fileID: 1894799953}
   GameOverPanel: {fileID: 1478352572}
+  PlayerAnimator: {fileID: 1527611480}
 --- !u!1 &455512642
 GameObject:
   m_ObjectHideFlags: 0
@@ -4977,7 +4978,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 439045375}
         m_TargetAssemblyTypeName: PauseScript, Assembly-CSharp
         m_MethodName: TitleButton
         m_Mode: 1
@@ -5253,9 +5254,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 439045374}
         m_TargetAssemblyTypeName: PauseScript, Assembly-CSharp
-        m_MethodName: RestartButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -12,6 +12,8 @@ public class GameUIScript : MonoBehaviour
     public RectTransform sunBarRect;
     public RectTransform barIconRect;
 
+    public PlayerManager PlayerManager;
+
     void Start()
     {
         currentsunBar = maxsunBar / 2;
@@ -41,10 +43,10 @@ public class GameUIScript : MonoBehaviour
     public void IncreaseSunBar()
     {
         // 조각 얻을 시 게이지 업
-        if (getice != GameManager.Instance.PlayerManager.playerEXP)
+        if (getice != PlayerManager.playerEXP)
         {
-            currentsunBar += (GameManager.Instance.PlayerManager.playerEXP - getice) * 20;
-            getice = GameManager.Instance.PlayerManager.playerEXP;
+            currentsunBar += (PlayerManager.playerEXP - getice) * 15;
+            getice = PlayerManager.playerEXP;
             //print("게이지 up : " + currentsunBar);
             UpdatesunBar();
         }

@@ -49,7 +49,7 @@ public class IceManager : MonoBehaviour
     void Start()
     {
         CurrentHP = maxHP;
-        AudioSource_.volume = GameManager.Instance.GameData.EffectSound_Volume;
+        AudioSource_.volume = GameManager.Instance.GameData.EffectSound_Volume/10f;
         AudioSource_.clip = start_audio;
         AudioSource_.Play();
         if (IcePiece_In_IceOBJ == null)
@@ -113,7 +113,7 @@ public class IceManager : MonoBehaviour
 
         if (CurrentHP <= 0)
         {
-            print("파괴 애니메이션 3");
+            //print("파괴 애니메이션 3");
             body_animator.SetInteger("destroy", 3);
             body_animator.SetTrigger("die");
         }

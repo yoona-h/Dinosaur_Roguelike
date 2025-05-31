@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class TitleScript : MonoBehaviour
 {
     public GameObject Setting_screen;
-
+    public Option_Screen Option_Screen;
     void Start()
     {
 
@@ -26,6 +26,7 @@ public class TitleScript : MonoBehaviour
     {
         //화면이 꺼져있으면 키고, 켜져있으면 끄기
         Setting_screen.SetActive(!Setting_screen.activeSelf);
+        Option_Screen.apply_data();
     }
     public void ExitGame()
     {

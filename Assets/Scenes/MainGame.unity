@@ -3244,6 +3244,7 @@ MonoBehaviour:
   sunBarspeed: 1
   sunBarRect: {fileID: 1563841590}
   barIconRect: {fileID: 878765538}
+  PlayerManager: {fileID: 173124613}
 --- !u!4 &439045378
 Transform:
   m_ObjectHideFlags: 0
@@ -6464,7 +6465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf603cebd272d449a1821f034a63f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapSize: {x: 50, y: 50}
+  MapSize: {x: 100, y: 100}
   interval: 2
   rand_ice:
   - 40

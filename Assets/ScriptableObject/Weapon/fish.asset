@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapon_prefab: {fileID: 5019369903532543930, guid: e3debaab14de09948b75bf6d43856f1f, type: 3}
   Bullet: {fileID: 0}
-  weaponLevel: 0
+  weaponLevel: 15
   ATK: 0
   AttackSpeed: 0.5
   AttackRange: 1

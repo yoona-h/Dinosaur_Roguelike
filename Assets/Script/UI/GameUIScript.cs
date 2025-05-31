@@ -7,7 +7,7 @@ public class GameUIScript : MonoBehaviour
     public Image BarIcon;
     public float maxsunBar;
     public float currentsunBar;
-    private float sunBarspeed = 0f;
+    [HideInInspector] public float sunBarspeed = 1f;
     private int getice = 0;
     public RectTransform sunBarRect;
     public RectTransform barIconRect;
@@ -20,9 +20,7 @@ public class GameUIScript : MonoBehaviour
 
     void Update()
     {
-        sunBarspeed += 1f + Time.deltaTime;
-
-        currentsunBar -= Time.deltaTime * sunBarspeed * 0.8f;
+        currentsunBar -= Time.deltaTime * sunBarspeed * 10f;
 
         if (currentsunBar <= 0f)
         {
@@ -44,8 +42,9 @@ public class GameUIScript : MonoBehaviour
         // 조각 얻을 시 게이지 업
         if (getice != GameManager.Instance.PlayerManager.playerEXP)
         {
-            currentsunBar += 0.05f;
-
+            currentsunBar += (GameManager.Instance.PlayerManager.playerEXP - getice) * 10;
+            getice = GameManager.Instance.PlayerManager.playerEXP;
+            //print("게이지 up : " + currentsunBar);
             UpdatesunBar();
         }
 

@@ -6,6 +6,9 @@ public class GameOverScript : MonoBehaviour
     public Image sunBar;
     public PlayerMove PlayerMoveScript;
     public PlayerAttack PlayerAttackScript;
+    public ThirdPersonCamera ThirdPersonCameraScript;
+    public GameObject GameClearPanel;
+    public GameObject GameOverPanel;
 
     void Start()
     {
@@ -28,11 +31,15 @@ public class GameOverScript : MonoBehaviour
 
     public void gameover()
     {
-        playerMoveScript.enabled = false;
+        PlayerMoveScript.enabled = false;
+        PlayerAttackScript.enabled = false;
+        ThirdPersonCameraScript.enabled = false;
+
+        GameOverPanel.SetActive(true);
     }
 
     public void gameclear()
     {
-
+        GameClearPanel.SetActive(true);
     }
 }

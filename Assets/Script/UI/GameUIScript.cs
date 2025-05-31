@@ -21,18 +21,18 @@ public class GameUIScript : MonoBehaviour
     void Update()
     {
         currentsunBar -= Time.deltaTime * sunBarspeed * 10f;
-
-        if (currentsunBar <= 0f)
-        {
-            currentsunBar = 0f;
-            Debug.Log("게임 오버"); //게임오버 추가
-        }
-        else if (currentsunBar >= maxsunBar)
-        {
-            currentsunBar = maxsunBar;
-            Debug.Log("게임 클리어"); //클리어 추가
-        }
-
+        /*
+                if (currentsunBar <= 0f)
+                {
+                    currentsunBar = 0f;
+                    Debug.Log("게임 오버"); //게임오버 추가
+                }
+                else if (currentsunBar >= maxsunBar)
+                {
+                    currentsunBar = maxsunBar;
+                    Debug.Log("게임 클리어"); //클리어 추가
+                }
+        */
         UpdatesunBar();
         IncreaseSunBar(); // 얼음조각 습득 감지시 함수 호출
 

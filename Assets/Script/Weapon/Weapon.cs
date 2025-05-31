@@ -24,6 +24,9 @@ public class Weapon : ScriptableObject
     public GameObject Weapon_prefab;
     public GameObject Bullet;//원거리 공격일 때 총알 필요하면 넣기
 
+    [Header("무기 레벨")]
+    public int weaponLevel = 0;
+
     [Header("강화 없을 때의 기본 스텟 (실제로 증가하는 값, 참조하는 값)")]
     public int ATK;
     public float AttackSpeed;//실제로 공격 사이에 걸리는 시간(초). 낮을수록 빠름

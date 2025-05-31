@@ -99,14 +99,21 @@ public class IceManager : MonoBehaviour
         takedamage_particle.Play();
 
         if (CurrentHP <= 0)
-        { 
+        {
+            print("파괴 애니메이션 3");
             body_animator.SetInteger("destroy", 3);
             body_animator.SetTrigger("die");
         }
-        else if(CurrentHP <= maxHP * 0.4f) 
+        else if(CurrentHP <= maxHP * 0.4f)
+        {
             body_animator.SetInteger("destroy", 2);
+            print("파괴 애니메이션 2");
+        }
         else if (CurrentHP <= maxHP * 0.7f)
+        {
+            print("파괴 애니메이션 1");
             body_animator.SetInteger("destroy", 1);
+        }
     }
 
     private void Die()

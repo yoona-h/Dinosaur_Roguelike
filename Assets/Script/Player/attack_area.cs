@@ -10,7 +10,7 @@ public class attack_area : MonoBehaviour
     // 공격 발동 시 호출 (외부에서)
     public void Activate(int damageAmount)
     {
-        print(currentTargets.Count);
+        //print(currentTargets.Count);
         damage = damageAmount;
         foreach (IceManager target in currentTargets)
         {

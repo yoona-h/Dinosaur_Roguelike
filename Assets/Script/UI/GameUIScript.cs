@@ -20,7 +20,7 @@ public class GameUIScript : MonoBehaviour
 
     void Update()
     {
-        sunBarspeed += Time.deltaTime;
+        sunBarspeed += 1f + Time.deltaTime;
 
         currentsunBar -= Time.deltaTime * sunBarspeed * 0.8f;
 
@@ -44,7 +44,7 @@ public class GameUIScript : MonoBehaviour
         // 조각 얻을 시 게이지 업
         if (getice != GameManager.Instance.PlayerManager.playerEXP)
         {
-            currentsunBar += 0.01f;
+            currentsunBar += 0.05f;
 
             UpdatesunBar();
         }

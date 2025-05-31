@@ -13,8 +13,7 @@ public class LevelUpUIScript : MonoBehaviour
 
     public Image levelUi; // 레벨 ui 배경색 이미지
     public GameObject LevelUpPanel; //레벨업화면
-    private int playerlastLevel = 0; //플레이어레벨카운팅
-    private int weaponlastLevel = 0; //무기레벨카운팅
+    // private int playerlastLevel = 0; //플레이어레벨카운팅 
     int randomIndex; // 랜덤으로 뽑은 무기 인덱스
     Weapon randomWeapon; // 랜덤으로 뽑은 무기
 
@@ -47,11 +46,11 @@ public class LevelUpUIScript : MonoBehaviour
         weaponImageList.Add(pickaxe_Image);
         weaponImageList.Add(Pistol_Image);
 
-        //카운팅 레벨 초기화 및 텍스트 초기화
-        playerlastLevel = PlayerManager.Instance.playerLevel;
-        LevelText.text = playerlastLevel + "Lv";
-        pauseLevelText.text = string.Format("공룡 : {0} Lv", playerlastLevel);
-        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, weaponlastLevel);
+        // 텍스트 초기화
+        // playerlastLevel = PlayerManager.Instance.playerLevel;
+        LevelText.text = GameManager.Instance.PlayerManager.playerLevel + "Lv";
+        pauseLevelText.text = string.Format("공룡 : {0} Lv", GameManager.Instance.PlayerManager.playerLevel);
+        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
     }
 
     void Update()
@@ -76,10 +75,10 @@ public class LevelUpUIScript : MonoBehaviour
         GameManager.Instance.GameData.GameStop = true; // 게임화면 퍼즈
         Time.timeScale = 0f;
 
-        playerlastLevel++;
+        // playerlastLevel++;
         //레벨 텍스트 재표기
-        LevelText.text = playerlastLevel + "Lv";
-        pauseLevelText.text = string.Format("공룡 : {0} Lv", playerlastLevel);
+        LevelText.text = GameManager.Instance.PlayerManager.playerLevel + "Lv";
+        pauseLevelText.text = string.Format("공룡 : {0} Lv", GameManager.Instance.PlayerManager.playerLevel);
 
         LevelUpPanel.SetActive(true); //레벨업화면 활성화
         randomIndex = Random.Range(0, weaponList.Count); // 무작위 무기 선별
@@ -90,10 +89,9 @@ public class LevelUpUIScript : MonoBehaviour
     public void UpgradeButton()
     {
         //무기 레벨업 신호 보내는 코드 필요?할?듯?
-        weaponlastLevel++;
 
         // 무기 텍스트 업데이트
-        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, weaponlastLevel);
+        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
 
         // 무기 이미지, 레벨업 판넬 비활성화
         weaponImageList[randomIndex].SetActive(false);
@@ -114,7 +112,7 @@ public class LevelUpUIScript : MonoBehaviour
         GameManager.Instance.PlayerManager.PlayerAttack.ChangeWeapon(randomWeapon);
 
         // 무기 텍스트 업데이트
-        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, weaponlastLevel);
+        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
 
         // 무기 이미지, 레벨업 판넬 비활성화
         weaponImageList[randomIndex].SetActive(false);

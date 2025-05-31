@@ -12,7 +12,7 @@ public class Option_Screen : MonoBehaviour
     {
         apply_data();
 
-        // ½½¶óÀÌ´õ °ªÀÌ º¯ÇÒ ¶§ ½ÇÇàµÉ ÇÔ¼ö µî·Ï
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½
         bgmSlider.onValueChanged.AddListener(OnBGMVolumeChanged);
         sfxSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
         mouseSensitivitySlider.onValueChanged.AddListener(OnMouseSensitivityChanged);
@@ -20,7 +20,7 @@ public class Option_Screen : MonoBehaviour
 
     public void apply_data()
     {
-        // ÃÊ±â°ªÀ» ½½¶óÀÌ´õ¿¡ ¹Ý¿µ
+        // ï¿½Ê±â°ªï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½Ý¿ï¿½
         bgmSlider.value = GameManager.Instance.GameData.BackGroundMusic_Volume;
         sfxSlider.value = GameManager.Instance.GameData.EffectSound_Volume;
         mouseSensitivitySlider.value = GameManager.Instance.GameData.mouseSensitivity;
@@ -28,13 +28,15 @@ public class Option_Screen : MonoBehaviour
     public void OnBGMVolumeChanged(float value)
     {
         GameManager.Instance.GameData.BackGroundMusic_Volume = value;
-        // ÇÊ¿äÇÏ´Ù¸é BGM º¼·ýµµ Á÷Á¢ Á¶Á¤
+        GameManager.Instance.SoundManager.apply_volume();
+        // ï¿½Ê¿ï¿½ï¿½Ï´Ù¸ï¿½ BGM ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         // AudioManager.Instance.SetBGMVolume(value);
     }
 
     public void OnSFXVolumeChanged(float value)
     {
         GameManager.Instance.GameData.EffectSound_Volume = value;
+        GameManager.Instance.SoundManager.apply_volume();
         // AudioManager.Instance.SetSFXVolume(value);
     }
 

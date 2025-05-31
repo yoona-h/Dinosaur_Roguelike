@@ -44,6 +44,7 @@ public class GameOverScript : MonoBehaviour
         PlayerAttackScript.enabled = false;
         ThirdPersonCameraScript.enabled = false;
         PlayerAnimator.SetTrigger("Die");
+        GameManager.Instance.SoundManager.StopBGM();
         StartCoroutine(ShowGameOverPanelDelayed());
     }
 

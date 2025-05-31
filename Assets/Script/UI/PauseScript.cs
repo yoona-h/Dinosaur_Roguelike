@@ -56,6 +56,7 @@ public class PauseScript : MonoBehaviour
             if (GameManager.Instance.GameData.GameStop)
             {
                 Time.timeScale = 0f;
+                GameManager.Instance.SoundManager.PauseBGM();
 
             }
             else
@@ -63,6 +64,7 @@ public class PauseScript : MonoBehaviour
                 Time.timeScale = 1f;
                 Cursor.visible = false;                   // 커서 숨기기
                 Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
+                GameManager.Instance.SoundManager.UnPauseBGM();
             }
         }
 
@@ -72,6 +74,7 @@ public class PauseScript : MonoBehaviour
     {
         GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
         Time.timeScale = 1f;
+        GameManager.Instance.SoundManager.StopBGM();
         SceneManager.LoadScene("TitleScene");
     }
 

@@ -23,7 +23,6 @@ public class SoundManager : MonoBehaviour
         Init();
     }
 
-
     public void PlayBGM(AudioClip bgmSound = null)//BGM 바꾸고싶을 때만 매개변수 전달하기. 그냥 재생은 매개변수 없어도 됨
     {
         if (bgmSound == null)
@@ -39,6 +38,15 @@ public class SoundManager : MonoBehaviour
         bgmPlayer.Stop();
     }
 
+    public void PauseBGM()
+    {
+        bgmPlayer.Pause();
+    }
+
+    public void UnPauseBGM()
+    {
+        bgmPlayer.UnPause();
+    }
 
     public void PlaySFX(AudioClip sfxSound)
     {

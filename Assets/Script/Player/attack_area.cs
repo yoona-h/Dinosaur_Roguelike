@@ -14,7 +14,10 @@ public class attack_area : MonoBehaviour
         damage = damageAmount;
         foreach (IceManager target in currentTargets)
         {
-            //print(target.name);
+            if (target.inPool)
+            {
+                currentTargets.Remove(target);
+            }
             if (target != null)
             {
                 target.TakeDamage(damage);

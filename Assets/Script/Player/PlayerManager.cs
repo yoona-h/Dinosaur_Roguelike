@@ -17,14 +17,6 @@ public class PlayerManager : MonoBehaviour
     public int playerEXP = 0;//플레이어가 현재 획득한 경험치
     public int nextLevel_EXP = 10;//다음 레벨이 되기 위해 필요한 경험치 량. 레벨업 할 때마다 일정한 규칙으로 증가시킨다.
 
-    //현재 플레이어의 무기 변수
-    public Weapon PlayerWeapon
-    {
-        get => PlayerAttack.PlayerWeapon;
-        set => PlayerAttack.PlayerWeapon = value;
-    }
-
-
     private void Awake()
     {
         Instance = this;//게임을 새로 시작할 때마다 초기화해주기 위함

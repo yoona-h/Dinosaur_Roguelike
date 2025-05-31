@@ -99,7 +99,10 @@ public class IceManager : MonoBehaviour
         takedamage_particle.Play();
 
         if (CurrentHP <= 0)
+        { 
             body_animator.SetInteger("destroy", 3);
+            body_animator.SetTrigger("die");
+        }
         else if(CurrentHP <= maxHP * 0.4f) 
             body_animator.SetInteger("destroy", 2);
         else if (CurrentHP <= maxHP * 0.7f)

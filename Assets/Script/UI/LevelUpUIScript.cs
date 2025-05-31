@@ -34,6 +34,7 @@ public class LevelUpUIScript : MonoBehaviour
 
     [Space]
     public LevelManager LevelManager;
+    public PlayerManager PlayerManager;
 
     private List<Weapon> weaponList = new List<Weapon>();
     private List<GameObject> weaponImageList = new List<GameObject>();
@@ -58,21 +59,21 @@ public class LevelUpUIScript : MonoBehaviour
     {
         yield return null; // 한 프레임 대기
         // LV EXP UI 초기화
-        fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
+        fillAmount = Mathf.Clamp01((float)PlayerManager.playerEXP / PlayerManager.nextLevel_EXP);
         levelUi.fillAmount = fillAmount;
         // 텍스트 초기화
         // playerlastLevel = PlayerManager.Instance.playerLevel;
-        Debug.Log(GameManager.Instance.PlayerManager.playerLevel);
-        LevelText.text = GameManager.Instance.PlayerManager.playerLevel + "Lv";
-        pauseLevelText.text = string.Format("공룡 : {0} Lv", GameManager.Instance.PlayerManager.playerLevel);
-        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
+        Debug.Log(PlayerManager.playerLevel);
+        LevelText.text = PlayerManager.playerLevel + "Lv";
+        pauseLevelText.text = string.Format("공룡 : {0} Lv", PlayerManager.playerLevel);
+        WeaponText.text = string.Format("{0} : {1} Lv", PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
 
     }
 
     void Update()
     {
         // LV EXP UI 업데이트
-        fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
+        fillAmount = Mathf.Clamp01((float)PlayerManager.playerEXP / PlayerManager.nextLevel_EXP);
         levelUi.fillAmount = fillAmount;
 
         /*
@@ -110,8 +111,8 @@ public class LevelUpUIScript : MonoBehaviour
 
         // playerlastLevel++;
         //레벨 텍스트 재표기
-        LevelText.text = GameManager.Instance.PlayerManager.playerLevel + "Lv";
-        pauseLevelText.text = string.Format("공룡 : {0} Lv", GameManager.Instance.PlayerManager.playerLevel);
+        LevelText.text = PlayerManager.playerLevel + "Lv";
+        pauseLevelText.text = string.Format("공룡 : {0} Lv", PlayerManager.playerLevel);
     }
 
     public void UpgradeButton()
@@ -120,7 +121,7 @@ public class LevelUpUIScript : MonoBehaviour
         LevelManager.WeaponLevelUp();//무기 레벨업
 
         // 무기 텍스트 업데이트
-        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
+        WeaponText.text = string.Format("{0} : {1} Lv", PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
 
         // 무기 이미지, 레벨업 판넬 비활성화
         weaponImageList[randomIndex].SetActive(false);
@@ -138,10 +139,10 @@ public class LevelUpUIScript : MonoBehaviour
     public void ChangeButton()
     {
         //무기 변경
-        GameManager.Instance.PlayerManager.PlayerAttack.ChangeWeapon(randomWeapon);
+        PlayerManager.PlayerAttack.ChangeWeapon(randomWeapon);
 
         // 무기 텍스트 업데이트
-        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
+        WeaponText.text = string.Format("{0} : {1} Lv", PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
 
         // 무기 이미지, 레벨업 판넬 비활성화
         weaponImageList[randomIndex].SetActive(false);

@@ -1713,7 +1713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testWeapon: {fileID: 11400000, guid: 82030b93c85759c4eb8c93fc955a3b40, type: 2}
-  PlayerWeapon: {fileID: 11400000, guid: 890056def97b0744ca71b2a8cb9ec7e3, type: 2}
+  PlayerWeapon: {fileID: 11400000, guid: 82030b93c85759c4eb8c93fc955a3b40, type: 2}
   weaponHolder: {fileID: 342074391}
   currentWeapon: {fileID: 0}
   PlayerAnimator: {fileID: 1527611480}

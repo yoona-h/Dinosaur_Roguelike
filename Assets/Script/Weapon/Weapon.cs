@@ -20,11 +20,6 @@ public class Weapon : ScriptableObject
             //총알발사???
         }
 
-        if (weaponID == 3)
-        {
-            PlayerManager.Instance.PlayerAttack.currentWeapon.transform.GetComponent<ParticleSystem>().Play();
-        }
-
         if (weaponID == 4)
         {
             PlayerManager.Instance.PlayerAttack.currentWeapon.GetComponent<Animator>().SetTrigger("Rotation");

@@ -8,7 +8,8 @@ public class LevelUpUIScript : MonoBehaviour
     public Text LevelText; //게임화면 좌상단 텍스트
     public Text pauseLevelText; //퍼즈화면 텍스트
     public Text WeaponText; //퍼즈화면 텍스트
-    public Text ChangeweaponText; // 레벨업화면 새무기 텍스트
+    public Text Changeweapon_nameText; // 레벨업화면 새무기 이름 텍스트
+    public Text Changeweapon_Text; // 레벨업화면 새무기 설명 텍스트
     public Text UpgradeweaponText; // 레벨업화면 무기 업그레이드 텍스트
 
     public Image levelUi; // 레벨 ui 배경색 이미지
@@ -102,6 +103,10 @@ public class LevelUpUIScript : MonoBehaviour
         while (randomWeapon == PlayerManager.Instance.PlayerAttack.PlayerWeapon);
 
         weaponImageList[randomIndex].SetActive(true); // 선별 무기 이미지 활성화
+        //Changeweapon_nameText.text = string.Format("{0}", randomWeapon).Split()[0]; // 무기 이름
+        Changeweapon_nameText.text = randomWeapon.Weapon_name;
+        Changeweapon_Text.text = randomWeapon.Weapon_description;
+        // 무기 설명 텍스트로 변경 필요!!!
 
         // playerlastLevel++;
         //레벨 텍스트 재표기

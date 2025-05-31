@@ -23,5 +23,5 @@ MonoBehaviour:
   AttackRange_increase: 0
   AttackArea: {x: 1.2, y: 1, z: 1.2}
   weaponID: 3
-  Weapon_name: Flint
+  Weapon_name: "\uBD80\uC2EF\uB3CC"
   Weapon_description: 

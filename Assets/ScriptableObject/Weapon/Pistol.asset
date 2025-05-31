@@ -23,5 +23,5 @@ MonoBehaviour:
   AttackRange_increase: 0
   AttackArea: {x: 0.7, y: 2, z: 95}
   weaponID: 5
-  Weapon_name: Pistol
+  Weapon_name: "\uAD8C\uCD1D"
   Weapon_description: 

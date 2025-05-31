@@ -23,5 +23,5 @@ MonoBehaviour:
   AttackRange_increase: 0
   AttackArea: {x: 1.3, y: 1, z: 1.3}
   weaponID: 2
-  Weapon_name: Fish
+  Weapon_name: "\uBB3C\uACE0\uAE30"
   Weapon_description: 

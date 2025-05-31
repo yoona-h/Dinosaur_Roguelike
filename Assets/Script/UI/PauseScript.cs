@@ -31,7 +31,16 @@ public class PauseScript : MonoBehaviour
             isPause = true;
         }
     }
+    public void Gameclear_ContinueButton()
+    {
+        GameClearPanel.SetActive(false);
 
+        Cursor.visible = false;                   // 커서 숨기기
+        Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
+
+        GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
+        Time.timeScale = 1f;
+    }
     public void pauseButton()
     {
         isPause = !isPause;

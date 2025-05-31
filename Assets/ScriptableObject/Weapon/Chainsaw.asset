@@ -23,5 +23,5 @@ MonoBehaviour:
   AttackRange_increase: 0
   AttackArea: {x: 1.5, y: 1, z: 3}
   weaponID: 4
-  Weapon_name: Chainsaw
+  Weapon_name: "\uC804\uAE30\uD1B1"
   Weapon_description: 

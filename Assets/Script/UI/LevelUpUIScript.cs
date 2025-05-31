@@ -56,21 +56,14 @@ public class LevelUpUIScript : MonoBehaviour
     private IEnumerator DelayedInit()
     {
         yield return null; // 한 프레임 대기
-        if (GameManager.Instance != null && GameManager.Instance.PlayerManager != null)
-        {
-            // LV EXP UI 초기화
-            fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
-            levelUi.fillAmount = fillAmount;
-            // 텍스트 초기화
-            // playerlastLevel = PlayerManager.Instance.playerLevel;
-            LevelText.text = GameManager.Instance.PlayerManager.playerLevel + "Lv";
-            pauseLevelText.text = string.Format("공룡 : {0} Lv", GameManager.Instance.PlayerManager.playerLevel);
-            WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
-        }
-        else
-        {
-            Debug.LogError("GameManager or PlayerManager is null");
-        }
+        // LV EXP UI 초기화
+        fillAmount = Mathf.Clamp01((float)GameManager.Instance.PlayerManager.playerEXP / GameManager.Instance.PlayerManager.nextLevel_EXP);
+        levelUi.fillAmount = fillAmount;
+        // 텍스트 초기화
+        // playerlastLevel = PlayerManager.Instance.playerLevel;
+        LevelText.text = GameManager.Instance.PlayerManager.playerLevel + "Lv";
+        pauseLevelText.text = string.Format("공룡 : {0} Lv", GameManager.Instance.PlayerManager.playerLevel);
+        WeaponText.text = string.Format("{0} : {1} Lv", GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, GameManager.Instance.PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
 
     }
 

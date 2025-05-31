@@ -9,6 +9,7 @@ public class IceManager : MonoBehaviour
     public IcePiece_in_IceOBJ IcePiece_In_IceOBJ;
     public Collider collider_;
 
+    public AudioSource AudioSource_;
     public Animator body_animator;
     public Ice_HPbar Ice_HPbar;
 
@@ -17,6 +18,11 @@ public class IceManager : MonoBehaviour
     float attackRadius = 1f;
     public LayerMask playerLayer;
 
+
+    [Header("Audio clips")]
+    public AudioClip start_audio;
+    public AudioClip hitted_audio;
+    public AudioClip destroied_audio;
 
     private float currentHP;
     public float CurrentHP
@@ -43,6 +49,9 @@ public class IceManager : MonoBehaviour
     void Start()
     {
         CurrentHP = maxHP;
+        AudioSource_.volume = GameManager.Instance.GameData.EffectSound_Volume;
+        AudioSource_.clip = start_audio;
+        AudioSource_.Play();
         if (IcePiece_In_IceOBJ == null)
         {
             IcePiece_In_IceOBJ = gameObject.GetComponent<IcePiece_in_IceOBJ>();
@@ -97,6 +106,10 @@ public class IceManager : MonoBehaviour
         Ice_HPbar.SetHealth(CurrentHP / maxHP);
 
         takedamage_particle.Play();
+
+        AudioSource_.volume = GameManager.Instance.GameData.EffectSound_Volume;
+        AudioSource_.clip = hitted_audio;
+        AudioSource_.Play();
 
         if (CurrentHP <= 0)
         {

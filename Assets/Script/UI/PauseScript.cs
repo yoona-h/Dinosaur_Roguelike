@@ -28,7 +28,7 @@ public class PauseScript : MonoBehaviour
     {
         if (!GameOverPanel.activeSelf && !GameClearPanel.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
                 //pauseButton();
                 TogglePause();

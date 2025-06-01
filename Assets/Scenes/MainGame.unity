@@ -1892,6 +1892,7 @@ MonoBehaviour:
   PlayerAttack: {fileID: 173124612}
   PlayerMove: {fileID: 173124610}
   attack_area: {fileID: 480930147}
+  GameOverScript: {fileID: 439045379}
   playerATK: 5
   playerATK_increase: 2
   playerLevel: 0

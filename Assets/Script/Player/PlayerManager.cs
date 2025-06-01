@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerAttack PlayerAttack;
     public PlayerMove PlayerMove;
     public attack_area attack_area;
-
+    public GameOverScript GameOverScript;
 
     public int playerATK;//현재 플레이어의 공격력 저장
     private int playerATK_default = 2;
@@ -34,6 +34,7 @@ public class PlayerManager : MonoBehaviour
     public void Die_from_Ice()//얼음에 맞아죽었을 때 호출하기
     {
         GameManager.Instance.GameData.MaxScore = playerEXP;
+        GameOverScript.gameover();
         print("플레이어 얼음에 맞아죽음...");
     }
     

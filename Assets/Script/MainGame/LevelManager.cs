@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
         get => IceGameManager.interval;
         set => IceGameManager.interval = value;
     }
+    float increase_ = 10f;
 
 
     private void Start()
@@ -44,7 +45,7 @@ public class LevelManager : MonoBehaviour
         PlayerManager.Instance.nextLevel_EXP = (int)(PlayerManager.Instance.nextLevel_EXP * 1.8f);
 
         if (interval > 1)
-            interval -= 0.2f;
+            interval -= 0.5f;
         else
             interval = 0.8f;
         
@@ -57,63 +58,63 @@ public class LevelManager : MonoBehaviour
                 GameUIScript.sunBarspeed += 0.05f;
                 break;
             case 2:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 80;
                 IceGameManager.rand_ice[1] = 20;
                 IceGameManager.rand_ice[2] = 0;
                 IceGameManager.rand_ice[3] = 0;
                 break;
             case 3:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 80;
                 IceGameManager.rand_ice[1] = 20;
                 IceGameManager.rand_ice[2] = 5;
                 IceGameManager.rand_ice[3] = 0;
                 break;
             case 4:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 70;
                 IceGameManager.rand_ice[1] = 20;
                 IceGameManager.rand_ice[2] = 5;
                 IceGameManager.rand_ice[3] = 5;
                 break;
             case 5:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 6:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 7:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 70;
                 IceGameManager.rand_ice[1] = 30;
                 IceGameManager.rand_ice[2] = 10;
                 IceGameManager.rand_ice[3] = 10;
                 break;
             case 8:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 9:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 10:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 70;
                 IceGameManager.rand_ice[1] = 30;
                 IceGameManager.rand_ice[2] = 15;
                 IceGameManager.rand_ice[3] = 15;
                 break;
             case 11:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 12:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 13:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 15:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 50;
                 IceGameManager.rand_ice[1] = 40;
                 IceGameManager.rand_ice[2] = 20;

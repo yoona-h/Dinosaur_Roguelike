@@ -3095,7 +3095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Setting_screen: {fileID: 687434836}
   Option_Screen: {fileID: 687434840}
-  maxScore: {fileID: 0}
+  maxScore: {fileID: 1074325469}
 --- !u!1 &2035183457
 GameObject:
   m_ObjectHideFlags: 0

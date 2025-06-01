@@ -64,8 +64,8 @@ public class LevelUpUIScript : MonoBehaviour
         // 텍스트 초기화
         // playerlastLevel = PlayerManager.Instance.playerLevel;
         Debug.Log(PlayerManager.playerLevel);
-        LevelText.text = PlayerManager.playerLevel + "Lv";
-        pauseLevelText.text = string.Format("공룡 : {0} Lv", PlayerManager.playerLevel);
+        LevelText.text = PlayerManager.playerLevel + 1 + "Lv";
+        pauseLevelText.text = string.Format("공룡 : {0} Lv", PlayerManager.playerLevel + 1);
         WeaponText.text = string.Format("{0} : {1} Lv", PlayerManager.PlayerAttack.PlayerWeapon.Weapon_name, PlayerManager.PlayerAttack.PlayerWeapon.weaponLevel);
 
     }

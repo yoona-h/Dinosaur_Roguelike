@@ -67,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void ChangeWeapon(Weapon weapon = null)
     {
-        int level = PlayerWeapon.weaponLevel-1;
+        int level = PlayerWeapon.weaponLevel;
 
         PlayerWeapon = weapon;
         Attack_function = weapon.Attack_function;

@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
 
         //임시 수식... 밸런스르르 고려하여 증가율 수식 설정하기! ------------------------------------------------------------------------
         //PlayerManager.Instance.playerATK_increase = PlayerManager.Instance.playerATK_increase;
-        PlayerManager.Instance.nextLevel_EXP += (int)(increase_ * 1.1f);
+        PlayerManager.Instance.nextLevel_EXP += (int)(PlayerManager.Instance.nextLevel_EXP * 1.2f);
 
         if (interval > 1)
             interval -= 0.5f;
@@ -55,7 +55,7 @@ public class LevelManager : MonoBehaviour
                 GameUIScript.sunBarspeed += 0.05f;
                 break;
             case 1:
-                GameUIScript.sunBarspeed += 0.05f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 2:
                 GameUIScript.sunBarspeed += 0.1f;
@@ -65,21 +65,21 @@ public class LevelManager : MonoBehaviour
                 IceGameManager.rand_ice[3] = 0;
                 break;
             case 3:
-                GameUIScript.sunBarspeed += 0.2f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 80;
                 IceGameManager.rand_ice[1] = 20;
                 IceGameManager.rand_ice[2] = 5;
                 IceGameManager.rand_ice[3] = 0;
                 break;
             case 4:
-                GameUIScript.sunBarspeed += 0.3f;
+                GameUIScript.sunBarspeed += 0.4f;
                 IceGameManager.rand_ice[0] = 70;
                 IceGameManager.rand_ice[1] = 20;
                 IceGameManager.rand_ice[2] = 5;
                 IceGameManager.rand_ice[3] = 5;
                 break;
             case 5:
-                GameUIScript.sunBarspeed += 0.3f;
+                GameUIScript.sunBarspeed += 0.4f;
                 break;
             case 6:
                 GameUIScript.sunBarspeed += 0.4f;

@@ -3274,11 +3274,11 @@ MonoBehaviour:
   GameOverPanel: {fileID: 1478352572}
   GameClearPanel: {fileID: 1894799953}
   DinosaurUIImage: {fileID: 167734464}
-  Dinosaur_chainsaw: {fileID: 21300000, guid: f8dedd4bfae7d4f45adef910a51e036c, type: 3}
-  Dinosaur_fish: {fileID: 21300000, guid: e875e28ced5fc4bdfa420fad9cff38e0, type: 3}
-  Dinosaur_flint: {fileID: 21300000, guid: 7a97029b270ae420591bccc3c6266081, type: 3}
-  Dinosaur_pickaxe: {fileID: 21300000, guid: 3fca42497c50b43fea85d9da6a2a5a2e, type: 3}
-  Dinosaur_pistol: {fileID: 21300000, guid: b0e0e6ac0a794403d99d28f21b4cf558, type: 3}
+  Dinosaur_chainsaw: {fileID: 21300000, guid: bcd7ca44ff2c6964ea0950306662d7e0, type: 3}
+  Dinosaur_fish: {fileID: 21300000, guid: 908d42287b526804daab9a4948f9b6b4, type: 3}
+  Dinosaur_flint: {fileID: 21300000, guid: 1d7c53f1bb4d6f148b0368235c4f9469, type: 3}
+  Dinosaur_pickaxe: {fileID: 21300000, guid: 7497396aae10abe4da10bcd36b310f69, type: 3}
+  Dinosaur_pistol: {fileID: 21300000, guid: 51f50725b1f322b41a939ee112b2d92b, type: 3}
 --- !u!114 &439045376
 MonoBehaviour:
   m_ObjectHideFlags: 0

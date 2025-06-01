@@ -56,7 +56,7 @@ public class GameOverScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;   // 커서 자유롭게 이동
 
         GameOverPanel.SetActive(true);
-        Score.text = string.Format("점수 : {0}", GameManager.Instance.PlayerManager.playerEXP * 10);
+        //Score.text = string.Format("점수 : {0}", GameManager.Instance.PlayerManager.playerEXP * 10);
 
         GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
         Time.timeScale = 0f;

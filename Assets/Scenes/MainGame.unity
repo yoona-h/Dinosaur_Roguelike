@@ -828,8 +828,8 @@ Transform:
   m_GameObject: {fileID: 76163233}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -50}
-  m_LocalScale: {x: 100, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 3.1959, z: -50}
+  m_LocalScale: {x: 100, y: 8.3918, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1835810091}
@@ -1870,8 +1870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f139a3f6fad5d4b97281446f9356f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testWeapon: {fileID: 11400000, guid: 82030b93c85759c4eb8c93fc955a3b40, type: 2}
-  PlayerWeapon: {fileID: 11400000, guid: 82030b93c85759c4eb8c93fc955a3b40, type: 2}
+  testWeapon: {fileID: 11400000, guid: a02078e5568cedd439d041c50c62458c, type: 2}
+  PlayerWeapon: {fileID: 11400000, guid: a02078e5568cedd439d041c50c62458c, type: 2}
   weaponHolder: {fileID: 342074391}
   currentWeapon: {fileID: 0}
   PlayerAnimator: {fileID: 1527611480}
@@ -2803,8 +2803,8 @@ Transform:
   m_GameObject: {fileID: 282358841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 50}
-  m_LocalScale: {x: 100, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 3.1959, z: 50}
+  m_LocalScale: {x: 100, y: 8.3918, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1835810091}
@@ -5515,8 +5515,8 @@ Transform:
   m_GameObject: {fileID: 770860641}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 100}
+  m_LocalPosition: {x: 50, y: 3.1959, z: 0}
+  m_LocalScale: {x: 1, y: 8.3918, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1835810091}
@@ -6857,6 +6857,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 123078557}
     m_Modifications:
+    - target: {fileID: 1266214267046132852, guid: 1a9520e7d5db8024987d5ce1ddba15a0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5928199613133091203, guid: 1a9520e7d5db8024987d5ce1ddba15a0, type: 3}
       propertyPath: m_Name
       value: Snowman_Hat_3
@@ -7836,6 +7840,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 123078557}
     m_Modifications:
+    - target: {fileID: 1637315228209974012, guid: 47daea3ca5dd4414ba14034455c56624, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8404106716229480272, guid: 47daea3ca5dd4414ba14034455c56624, type: 3}
       propertyPath: m_Name
       value: Snowman_Body_3
@@ -8812,6 +8820,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892773426}
     m_Modifications:
+    - target: {fileID: 807135336889622542, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3918715606708292985, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
       propertyPath: m_Name
       value: Snowdrift_2 (3)
@@ -8874,6 +8886,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892773426}
     m_Modifications:
+    - target: {fileID: 807135336889622542, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3918715606708292985, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
       propertyPath: m_Name
       value: Snowdrift_2 (4)
@@ -9154,6 +9170,10 @@ PrefabInstance:
     - target: {fileID: 7677356802687250799, guid: 55d1c44f0e6d7584b9e33a1d320070cd, type: 3}
       propertyPath: m_Name
       value: Snowman_Head_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995215121133715094, guid: 55d1c44f0e6d7584b9e33a1d320070cd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9723,6 +9743,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8890495163186563324, guid: d67c95ed7d165114c87671fd578d2a2e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10127,6 +10151,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4374658059165907411, guid: d67c95ed7d165114c87671fd578d2a2e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890495163186563324, guid: d67c95ed7d165114c87671fd578d2a2e, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11786,6 +11814,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8890495163186563324, guid: d67c95ed7d165114c87671fd578d2a2e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11923,6 +11955,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8890495163186563324, guid: d67c95ed7d165114c87671fd578d2a2e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11941,6 +11977,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892773426}
     m_Modifications:
+    - target: {fileID: 807135336889622542, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3918715606708292985, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
       propertyPath: m_Name
       value: Snowdrift_2
@@ -13291,6 +13331,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8890495163186563324, guid: d67c95ed7d165114c87671fd578d2a2e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13309,6 +13353,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892773426}
     m_Modifications:
+    - target: {fileID: 807135336889622542, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3918715606708292985, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
       propertyPath: m_Name
       value: Snowdrift_2 (2)
@@ -13453,8 +13501,8 @@ Transform:
   m_GameObject: {fileID: 1658663074}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 100}
+  m_LocalPosition: {x: -50, y: 3.1959, z: 0}
+  m_LocalScale: {x: 1, y: 8.3918, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1835810091}
@@ -13882,6 +13930,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892773426}
     m_Modifications:
+    - target: {fileID: 807135336889622542, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3918715606708292985, guid: 13ce57c3d431a124aa4f6939d61d5e01, type: 3}
       propertyPath: m_Name
       value: Snowdrift_2 (1)
@@ -15712,6 +15764,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1892773426}
     m_Modifications:
+    - target: {fileID: 2755753344482287114, guid: b9a17b66526821b408f774b3d999c87b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8351756622524622301, guid: b9a17b66526821b408f774b3d999c87b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.9000225
@@ -17309,6 +17365,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3495338654742368014, guid: 84f2d7ca09c7ed540a841ac56f482415, type: 3}
+      propertyPath: 'sfxSounds.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c9ca23930999c74cab9513c35b699d0, type: 3}
+    - target: {fileID: 3495338654742368014, guid: 84f2d7ca09c7ed540a841ac56f482415, type: 3}
+      propertyPath: 'sfxSounds.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 8729fe95ed4282142a13ae53bbd06ebd, type: 3}
     - target: {fileID: 3509973438034139679, guid: 84f2d7ca09c7ed540a841ac56f482415, type: 3}
       propertyPath: PlayerManager
       value: 

@@ -111,8 +111,8 @@ public class LevelUpUIScript : MonoBehaviour
 
         // playerlastLevel++;
         //레벨 텍스트 재표기
-        LevelText.text = PlayerManager.playerLevel + "Lv";
-        pauseLevelText.text = string.Format("공룡 : {0} Lv", PlayerManager.playerLevel);
+        LevelText.text = PlayerManager.playerLevel + 1 + "Lv";
+        pauseLevelText.text = string.Format("공룡 : {0} Lv", PlayerManager.playerLevel + 1);
     }
 
     public void UpgradeButton()

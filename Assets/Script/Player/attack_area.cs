@@ -7,21 +7,23 @@ public class attack_area : MonoBehaviour
     private bool active = false;
     private int damage;
 
-    // °ø°Ý ¹ßµ¿ ½Ã È£Ãâ (¿ÜºÎ¿¡¼­)
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ßµï¿½ ï¿½ï¿½ È£ï¿½ï¿½ (ï¿½ÜºÎ¿ï¿½ï¿½ï¿½)
     public void Activate(int damageAmount)
     {
         //print(currentTargets.Count);
         damage = damageAmount;
         foreach (IceManager target in currentTargets)
         {
+            if (target == null) continue;
+
             if (target.inPool)
             {
                 currentTargets.Remove(target);
+                continue;
             }
-            if (target != null)
-            {
-                target.TakeDamage(damage);
-            }
+
+            target.TakeDamage(damage);
+
         }
     }
 
@@ -43,7 +45,7 @@ public class attack_area : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"[Enter] IceManager ¸ø Ã£À½ ¡æ Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®: {other.name}, ºÎ¸ð: {other.transform.parent?.name}");
+            Debug.LogWarning($"[Enter] IceManager ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®: {other.name}, ï¿½Î¸ï¿½: {other.transform.parent?.name}");
         }
     }
 
@@ -70,7 +72,7 @@ public class attack_area : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"[Enter] IceManager ¸ø Ã£À½ ¡æ Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®: {other.name}, ºÎ¸ð: {other.transform.parent?.name}");
+            Debug.LogWarning($"[Enter] IceManager ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®: {other.name}, ï¿½Î¸ï¿½: {other.transform.parent?.name}");
         }
     }
 }

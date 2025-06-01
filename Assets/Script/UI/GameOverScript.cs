@@ -40,6 +40,7 @@ public class GameOverScript : MonoBehaviour
 
     public void gameover()
     {
+        PlayerMoveScript.audioSource.Stop();
         PlayerMoveScript.enabled = false;
         PlayerAttackScript.enabled = false;
         ThirdPersonCameraScript.enabled = false;

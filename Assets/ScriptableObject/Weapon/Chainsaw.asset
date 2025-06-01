@@ -24,4 +24,6 @@ MonoBehaviour:
   AttackArea: {x: 1.5, y: 1, z: 3}
   weaponID: 4
   Weapon_name: "\uC804\uAE30\uD1B1"
-  Weapon_description: 
+  Weapon_description: "\uC800\uC808\uB85C \uC6C0\uC9C1\uC774\uB294 \uC9F1\uB3CC\uC774\uB2E4.
+    \uB4E4\uACE0\uC788\uAE30\uB9CC \uD558\uBA74 \uC54C\uC544\uC11C \uC5BC\uC74C\uC744
+    \uBD80\uC234\uC900\uB2E4."

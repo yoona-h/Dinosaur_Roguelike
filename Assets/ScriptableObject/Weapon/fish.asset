@@ -17,11 +17,11 @@ MonoBehaviour:
   weaponLevel: 1
   ATK: 0
   AttackSpeed: 0.5
-  AttackRange: 1
+  AttackRange: -2.11
   ATK_increase: 0
   AttackSpeed_increase: 0.1
   AttackRange_increase: 0
   AttackArea: {x: 1.3, y: 1, z: 1.3}
   weaponID: 2
   Weapon_name: "\uBB3C\uACE0\uAE30"
-  Weapon_description: 
+  Weapon_description: "\uBB3C\uACE0\uAE30\uB2E4. (\uC601\uC5B4\uB85C fish)"

@@ -72,14 +72,14 @@ public class LevelManager : MonoBehaviour
                 IceGameManager.rand_ice[3] = 0;
                 break;
             case 4:
-                GameUIScript.sunBarspeed += 0.4f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 70;
                 IceGameManager.rand_ice[1] = 20;
                 IceGameManager.rand_ice[2] = 5;
                 IceGameManager.rand_ice[3] = 5;
                 break;
             case 5:
-                GameUIScript.sunBarspeed += 0.4f;
+                GameUIScript.sunBarspeed += 0.2f;
                 break;
             case 6:
                 GameUIScript.sunBarspeed += 0.4f;

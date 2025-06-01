@@ -16945,6 +16945,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3495338654742368014, guid: 84f2d7ca09c7ed540a841ac56f482415, type: 3}
+      propertyPath: 'sfxSounds.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c9ca23930999c74cab9513c35b699d0, type: 3}
+    - target: {fileID: 3495338654742368014, guid: 84f2d7ca09c7ed540a841ac56f482415, type: 3}
+      propertyPath: 'sfxSounds.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 8729fe95ed4282142a13ae53bbd06ebd, type: 3}
     - target: {fileID: 3509973438034139679, guid: 84f2d7ca09c7ed540a841ac56f482415, type: 3}
       propertyPath: PlayerManager
       value: 

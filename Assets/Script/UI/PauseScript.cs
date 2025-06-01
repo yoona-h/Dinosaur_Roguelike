@@ -19,17 +19,18 @@ public class PauseScript : MonoBehaviour
 
     void Update()
     {
-        if (GameOverPanel.activeSelf == false && GameClearPanel.activeSelf == false)
+        if (!GameOverPanel.activeSelf && !GameClearPanel.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                pauseButton();
+                //pauseButton();
+                TogglePause();
             }
         }
-        else
+        /*else
         {
             isPause = true;
-        }
+        }*/
     }
     public void Gameclear_ContinueButton()
     {
@@ -38,7 +39,8 @@ public class PauseScript : MonoBehaviour
         Cursor.visible = false;                   // 커서 숨기기
         Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
 
-        GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
+        //GameManager.Instance.GameData.GameStop = !GameManager.Instance.GameData.GameStop;
+        GameManager.Instance.GameData.GameStop = false;
         Time.timeScale = 1f;
     }
     public void pauseButton()
@@ -86,6 +88,35 @@ public class PauseScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; // 커서 화면 중앙 고정
         SceneManager.LoadScene("MainGame");
         GameManager.Instance.SoundManager.PlayBGM(GameManager.Instance.SoundManager.bgmSound);
+    }
+
+    public void TogglePause()
+    {
+        // 상태 토글
+        bool willPause = !GameManager.Instance.GameData.GameStop;
+        GameManager.Instance.GameData.GameStop = willPause;
+
+        // Pause UI 토글
+        PausePanel.SetActive(willPause);
+
+        // LevelUpPanel이 활성화 중이면 시간정지 상태 변경 금지
+        if (!LevelUpPanel.activeSelf)
+        {
+            if (willPause)
+            {
+                Time.timeScale = 0f;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                GameManager.Instance.SoundManager.PauseBGM();
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                GameManager.Instance.SoundManager.UnPauseBGM();
+            }
+        }
     }
 
 }

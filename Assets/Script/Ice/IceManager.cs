@@ -135,7 +135,9 @@ public class IceManager : MonoBehaviour
         //PlayerManager.Instance.attack_area.Exit_ice(collider_);
         isDead = true;
         collider_.enabled = false;
-        // TODO: 사운드, 애니메이션 재생
+        AudioSource_.volume = GameManager.Instance.GameData.EffectSound_Volume;
+        AudioSource_.clip = destroied_audio;
+        AudioSource_.Play();
         body_animator.SetTrigger("die");
 
         int piece_num = Random.Range(dropPiece_min, dropPiece_max+1);

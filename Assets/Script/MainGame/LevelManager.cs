@@ -42,6 +42,8 @@ public class LevelManager : MonoBehaviour
 
         //임시 수식... 밸런스르르 고려하여 증가율 수식 설정하기! ------------------------------------------------------------------------
         //PlayerManager.Instance.playerATK_increase = PlayerManager.Instance.playerATK_increase;
+        if (increase_ == 10)
+            increase_ += 5;
         PlayerManager.Instance.nextLevel_EXP += (int)(increase_ * 1.5f);
 
         if (interval > 1)
@@ -55,10 +57,10 @@ public class LevelManager : MonoBehaviour
                 GameUIScript.sunBarspeed += 0.05f;
                 break;
             case 1:
-                GameUIScript.sunBarspeed += 0.1f;
+                GameUIScript.sunBarspeed += 0.05f;
                 break;
             case 2:
-                GameUIScript.sunBarspeed += 0.1f;
+                GameUIScript.sunBarspeed += 0.2f;
                 IceGameManager.rand_ice[0] = 80;
                 IceGameManager.rand_ice[1] = 20;
                 IceGameManager.rand_ice[2] = 0;
@@ -79,49 +81,37 @@ public class LevelManager : MonoBehaviour
                 IceGameManager.rand_ice[3] = 5;
                 break;
             case 5:
-                GameUIScript.sunBarspeed += 0.1f;
+                GameUIScript.sunBarspeed += 0.2f;
                 break;
             case 6:
-                GameUIScript.sunBarspeed += 0.1f;
+                GameUIScript.sunBarspeed += 0.2f;
                 IceGameManager.rand_ice[0] = 70;
                 IceGameManager.rand_ice[1] = 30;
                 IceGameManager.rand_ice[2] = 10;
                 IceGameManager.rand_ice[3] = 10;
                 break;
             case 7:
-                GameUIScript.sunBarspeed += 0.1f;
+                GameUIScript.sunBarspeed += 0.2f;
                 break;
             case 8:
-                GameUIScript.sunBarspeed += 0.1f;
+                GameUIScript.sunBarspeed += 0.2f;
                 IceGameManager.rand_ice[0] = 70;
                 IceGameManager.rand_ice[1] = 30;
                 IceGameManager.rand_ice[2] = 15;
                 IceGameManager.rand_ice[3] = 15;
                 break;
             case 9:
-                GameUIScript.sunBarspeed += 0.1f;
+                GameUIScript.sunBarspeed += 0.2f;
                 break;
             case 10:
-                GameUIScript.sunBarspeed += 0.1f;
+                GameUIScript.sunBarspeed += 0.2f;
                 IceGameManager.rand_ice[0] = 50;
                 IceGameManager.rand_ice[1] = 40;
                 IceGameManager.rand_ice[2] = 20;
                 IceGameManager.rand_ice[3] = 20;
                 break;
-            case 11:
-                GameUIScript.sunBarspeed += 0.1f;
-                break;
-            case 12:
-                GameUIScript.sunBarspeed += 0.1f;
-                break;
-            case 13:
-                GameUIScript.sunBarspeed += 0.1f;
-                break;
-            case 15:
-                GameUIScript.sunBarspeed += 0.1f;
-                break;
             default:
-                GameUIScript.sunBarspeed += 0.1f;
+                GameUIScript.sunBarspeed += 0.05f;
                 break;
         }
 

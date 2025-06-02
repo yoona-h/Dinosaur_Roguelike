@@ -123,7 +123,9 @@ public class LevelManager : MonoBehaviour
     {
         PlayerAttack.PlayerWeapon.weaponLevel += increase_level;
         PlayerAttack.PlayerWeapon.ATK += PlayerAttack.PlayerWeapon.ATK_increase * increase_level;
-        PlayerAttack.PlayerWeapon.AttackSpeed += PlayerAttack.PlayerWeapon.AttackSpeed_increase * increase_level;
+        PlayerAttack.PlayerWeapon.AttackSpeed -= PlayerAttack.PlayerWeapon.AttackSpeed_increase * increase_level;
+        if (PlayerAttack.PlayerWeapon.AttackSpeed <= 0)
+            PlayerAttack.PlayerWeapon.AttackSpeed = 0.0001f;
 
     }
 }

@@ -19,7 +19,7 @@ MonoBehaviour:
   AttackSpeed: 1.8
   AttackRange: 1
   ATK_increase: 1
-  AttackSpeed_increase: 0.01
+  AttackSpeed_increase: -0.05
   AttackRange_increase: 0
   AttackArea: {x: 0.7, y: 2, z: 95}
   weaponID: 5

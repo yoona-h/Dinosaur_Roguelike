@@ -42,9 +42,8 @@ public class LevelManager : MonoBehaviour
 
         //임시 수식... 밸런스르르 고려하여 증가율 수식 설정하기! ------------------------------------------------------------------------
         //PlayerManager.Instance.playerATK_increase = PlayerManager.Instance.playerATK_increase;
-        if (increase_ == 10)
-            increase_ += 5;
-        PlayerManager.Instance.nextLevel_EXP += (int)(increase_ * 1.5f);
+
+        PlayerManager.Instance.nextLevel_EXP += (int)(increase_ * 1.6f);
 
         if (interval > 1)
             interval -= 0.5f;

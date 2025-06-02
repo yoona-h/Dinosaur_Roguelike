@@ -79,49 +79,49 @@ public class LevelManager : MonoBehaviour
                 IceGameManager.rand_ice[3] = 5;
                 break;
             case 5:
-                GameUIScript.sunBarspeed += 0.2f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 6:
-                GameUIScript.sunBarspeed += 0.2f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 70;
                 IceGameManager.rand_ice[1] = 30;
                 IceGameManager.rand_ice[2] = 10;
                 IceGameManager.rand_ice[3] = 10;
                 break;
             case 7:
-                GameUIScript.sunBarspeed += 0.2f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 8:
-                GameUIScript.sunBarspeed += 0.2f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 70;
                 IceGameManager.rand_ice[1] = 30;
                 IceGameManager.rand_ice[2] = 15;
                 IceGameManager.rand_ice[3] = 15;
                 break;
             case 9:
-                GameUIScript.sunBarspeed += 0.3f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 10:
-                GameUIScript.sunBarspeed += 0.3f;
+                GameUIScript.sunBarspeed += 0.1f;
                 IceGameManager.rand_ice[0] = 50;
                 IceGameManager.rand_ice[1] = 40;
                 IceGameManager.rand_ice[2] = 20;
                 IceGameManager.rand_ice[3] = 20;
                 break;
             case 11:
-                GameUIScript.sunBarspeed += 0.5f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 12:
-                GameUIScript.sunBarspeed += 0.5f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 13:
-                GameUIScript.sunBarspeed += 0.5f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             case 15:
-                GameUIScript.sunBarspeed += 0.5f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
             default:
-                GameUIScript.sunBarspeed += 0.2f;
+                GameUIScript.sunBarspeed += 0.1f;
                 break;
         }
 

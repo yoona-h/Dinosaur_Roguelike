@@ -16,7 +16,7 @@ MonoBehaviour:
   Bullet: {fileID: 0}
   weaponLevel: 1
   ATK: 16
-  AttackSpeed: 0.94999987
+  AttackSpeed: 0.95
   AttackRange: 1
   ATK_increase: 1
   AttackSpeed_increase: 0.01

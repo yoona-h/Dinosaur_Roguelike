@@ -15,11 +15,11 @@ MonoBehaviour:
   Weapon_prefab: {fileID: 5019369903532543930, guid: e3debaab14de09948b75bf6d43856f1f, type: 3}
   Bullet: {fileID: 0}
   weaponLevel: 1
-  ATK: 0
+  ATK: 3
   AttackSpeed: 0.5
   AttackRange: -2.11
   ATK_increase: 0
-  AttackSpeed_increase: 0.1
+  AttackSpeed_increase: 0.05
   AttackRange_increase: 0
   AttackArea: {x: 1.3, y: 1, z: 1.3}
   weaponID: 2

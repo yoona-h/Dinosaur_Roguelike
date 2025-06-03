@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
 
         GameManager.Instance.SoundManager.PlaySFX(LevelUp_sound);
 
-        //ÀÓ½Ã ¼ö½Ä... ¹ë·±½º¸£¸£ °í·ÁÇÏ¿© Áõ°¡À² ¼ö½Ä ¼³Á¤ÇÏ±â! ------------------------------------------------------------------------
+        //ï¿½Ó½ï¿½ ï¿½ï¿½ï¿½ï¿½... ï¿½ë·±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½! ------------------------------------------------------------------------
         //PlayerManager.Instance.playerATK_increase = PlayerManager.Instance.playerATK_increase;
 
         PlayerManager.Instance.nextLevel_EXP += (int)(increase_ * 1.6f);
@@ -124,8 +124,8 @@ public class LevelManager : MonoBehaviour
         PlayerAttack.PlayerWeapon.weaponLevel += increase_level;
         PlayerAttack.PlayerWeapon.ATK += PlayerAttack.PlayerWeapon.ATK_increase * increase_level;
         PlayerAttack.PlayerWeapon.AttackSpeed -= PlayerAttack.PlayerWeapon.AttackSpeed_increase * increase_level;
-        if (PlayerAttack.PlayerWeapon.AttackSpeed <= 0)
-            PlayerAttack.PlayerWeapon.AttackSpeed = 0.0001f;
+        if (PlayerAttack.PlayerWeapon.AttackSpeed <= 0.1)
+            PlayerAttack.PlayerWeapon.AttackSpeed = 0.1f;
 
     }
 }
